@@ -8,22 +8,22 @@ The customer needs to visit in mobile application and login. Thereafter need to 
 
 ## HIGH FIDELITY WIRE-FRAME OF PROPOSED DESIGN
 I have used Figma for Wire-frame. Here is the Link : <br>
-https://www.figma.com/file/pY58hxY0Z8NWbroXEviEho/TransGAS?t=SOjPncH3dUOaNLcP-0
+https://www.figma.com/file/pY58hxY0Z8NWbroXEviEho/TransGAS?t=SOjPncH3dUOaNLcP-0 <br>
 
  ![Picture1](https://user-images.githubusercontent.com/90142607/230792758-5ce8f47f-3da8-4618-967e-04538e37915c.png)
 
 <br>
 
 ## DESIGN
-
-•	Delivery Location: This should have an integrated GPS system such as Google Maps that enables customers to choose their delivery location. <br>
-•	User Interface: Minimalized and flat UI will help or design customer to use the application easy with clear navigation, media and tools etc...<br>
-•	Backend Design- for the server-side of the application using SQLite database to retrieve data.<br>
-•	In app navigation<br>
-•	Availability management<br>
-•	Brand and Size Selection<br>
-•	Driver ratings <br>
-
+<ul>
+<li>Delivery Location: This should have an integrated GPS system such as Google Maps that enables customers to choose their delivery location. </li>
+<li>User Interface: Minimalized and flat UI will help or design customer to use the application easy with clear navigation, media and tools etc...</li>
+<li>Backend Design- for the server-side of the application using SQLite database to retrieve data.</li>
+<li>In app navigation</li>
+<li>Availability management</li>
+<li>Brand and Size Selection</li>
+<li>Driver ratings </li>
+</ul>
 
 <h1 align="center">Credits to M.T.M. Zakir</h1>
 
