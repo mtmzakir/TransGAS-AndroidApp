@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".ForgotActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            app:srcCompat="@drawable/logo">
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/maroon"
+            android:textSize="20sp"
+            android:textColorHighlight="@color/light_yellow"
+            android:text="Forgot Password?" />
+
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit_text"
+            android:drawableLeft="@drawable/baseline_email_24"
+            android:drawablePadding="15dp"
+            android:fontFamily="@font/inter_medium"
+            android:hint="Email"
+            android:textColorHint="@color/yellow"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/main_button"
+            android:baselineAligned="false"
+            android:clickable="true"
+            android:fontFamily="@font/inter_bold"
+            android:text="Sent Reset Request"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/backLogin"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/maroon"
+            android:layout_marginTop="360dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:clickable="true"
+            android:text="Back to Login" />
+
+
+    </LinearLayout>
+
+</ScrollView>

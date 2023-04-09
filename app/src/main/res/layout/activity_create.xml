@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".CreateActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            app:srcCompat="@drawable/logo">
+        </ImageView>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/maroon"
+            android:textSize="20sp"
+            android:textColorHighlight="@color/light_yellow"
+            android:text="Create New Account" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text"
+            android:drawableLeft="@drawable/baseline_person_24"
+            android:drawablePadding="15dp"
+            android:fontFamily="@font/inter_medium"
+            android:hint="Name"
+            android:textColorHint="@color/yellow"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text"
+            android:drawableLeft="@drawable/baseline_email_24"
+            android:drawablePadding="15dp"
+            android:fontFamily="@font/inter_medium"
+            android:hint="Email"
+            android:textColorHint="@color/yellow"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text"
+            android:drawableLeft="@drawable/baseline_location_on_24"
+            android:drawablePadding="15dp"
+            android:fontFamily="@font/inter_medium"
+            android:hint="Address"
+            android:textColorHint="@color/yellow"
+            android:inputType="textPostalAddress"
+            android:padding="10dp"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/mobileNumber"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text"
+            android:drawableLeft="@drawable/baseline_phone_android_24"
+            android:drawablePadding="15dp"
+            android:fontFamily="@font/inter_medium"
+            android:hint="Mobile Number"
+            android:textColorHint="@color/yellow"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text"
+            android:drawableLeft="@drawable/baseline_lock_24"
+            android:drawablePadding="15dp"
+            android:textColorHint="@color/yellow"
+            android:fontFamily="@font/inter_medium"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/createButton"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/main_button"
+            android:baselineAligned="false"
+            android:layout_gravity="center"
+            android:fontFamily="@font/inter_bold"
+            android:text="Create Now"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fontFamily="@font/inter_bold"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:text="create Account with Social Profiles"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/google_Button"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:src="@drawable/google_icon" />
+
+            <ImageButton
+                android:id="@+id/facebook_Button"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/google_Button"
+                android:background="@color/white"
+                android:src="@drawable/facebook_icon" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fontFamily="@font/inter_bold"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text="Already Have an Account?"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/maroon"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:clickable="true"
+            android:text="Login" />
+
+
+    </LinearLayout>
+
+</ScrollView>
