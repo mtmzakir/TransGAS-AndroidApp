@@ -10,7 +10,20 @@
     tools:context=".HomeActivity"
     android:paddingTop="10dp">
 
+    <View
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/getLocation"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="-1dp"
+        android:background="@drawable/edit_text"
+        android:foregroundGravity="center" />
+
     <ImageButton
+        android:layout_marginRight="2dp"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/ic_notifications_24"
@@ -18,24 +31,30 @@
         android:layout_alignParentRight="true"/>
 
     <ImageButton
-        android:id="@+id/button_get_location"
+        android:layout_marginLeft="2dp"
+        android:id="@+id/getLocation"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@color/white"
-        android:src="@drawable/baseline_location_on_24"/>
+        android:src="@drawable/baseline_my_location_24"/>
 
     <TextView
-        android:id="@+id/location_text"
+        android:id="@+id/address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="40dp"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:gravity="center"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="40dp"
-        android:text="Current Location"
-        android:textSize="16dp" />
+        android:text="Current Location" />
+
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -47,86 +66,6 @@
 
 
     //
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="Location Tutorial"
-        android:fontFamily="cursive"
-        android:textColor="@color/black"
-        android:layout_marginTop="20dp"
-        android:textSize="60dp"/>
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/black"
-        android:id="@+id/getLocation"
-        android:text="Get Location"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lattitude"
-        android:text="Lattitude"
-        android:textSize="25dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/longitude"
-        android:layout_alignStart="@id/lattitude"
-        android:layout_below="@+id/lattitude"
-        android:text="Longitude"
-        android:textSize="25dp"
-        android:layout_marginBottom="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/address"
-        android:layout_alignStart="@id/lattitude"
-        android:layout_below="@+id/longitude"
-        android:text="Address"
-        android:textSize="25dp"
-        android:layout_marginBottom="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/city"
-        android:layout_alignStart="@id/lattitude"
-        android:layout_below="@+id/address"
-        android:text="City"
-        android:textSize="25dp"
-        android:layout_marginBottom="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/country"
-        android:layout_alignStart="@id/lattitude"
-        android:layout_below="@+id/city"
-        android:text="Country"
-        android:textSize="25dp"
-        android:layout_marginBottom="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
