@@ -108,10 +108,7 @@ public class HomeActivity extends AppCompatActivity{
                             }
                         }
                     });
-
-
         }else {
-
             askPermission();
         }
     }
