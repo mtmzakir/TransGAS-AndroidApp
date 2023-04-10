@@ -115,7 +115,7 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:background="@color/white"
-            android:src="@drawable/google_icon" />
+            android:src="@drawable/litro" />
 
         <ImageButton
             android:id="@+id/facebook_Button"
@@ -123,7 +123,7 @@
             android:layout_height="70dp"
             android:layout_toRightOf="@+id/google_Button"
             android:background="@color/white"
-            android:src="@drawable/facebook_icon" />
+            android:src="@drawable/laugfs" />
 
         <ImageButton
             android:id="@+id/google_Button2"
@@ -131,7 +131,7 @@
             android:layout_height="70dp"
             android:layout_toRightOf="@+id/facebook_Button"
             android:background="@color/white"
-            android:src="@drawable/google_icon" />
+            android:src="@drawable/hydrogen" />
 
         <ImageButton
             android:id="@+id/facebook_Button2"
@@ -139,7 +139,7 @@
             android:layout_height="70dp"
             android:layout_toRightOf="@+id/google_Button2"
             android:background="@color/white"
-            android:src="@drawable/facebook_icon" />
+            android:src="@drawable/helium" />
 
         <ImageButton
             android:id="@+id/google_Button3"
@@ -147,7 +147,7 @@
             android:layout_height="70dp"
             android:layout_toRightOf="@+id/facebook_Button2"
             android:background="@color/white"
-            android:src="@drawable/google_icon" />
+            android:src="@drawable/oxygen" />
 
     </RelativeLayout>
 

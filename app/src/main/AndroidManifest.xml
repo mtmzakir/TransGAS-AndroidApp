@@ -17,19 +17,22 @@
         tools:targetApi="31">
         <activity
             android:name=".AccountActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CartActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CategoriesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".CreateActivity"
+            android:name=".CartActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".CategoriesActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
@@ -37,7 +40,8 @@
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".CreateActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
