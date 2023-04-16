@@ -41,10 +41,19 @@ public class CreateActivity extends AppCompatActivity {
                 if (emails.equals("") || passwords.equals("") || names.equals("") || mobileNumbers.equals("") || addresses.equals(""))
                     Toast.makeText(CreateActivity.this, "Enter All Fields", Toast.LENGTH_SHORT).show();
                 else {
-                    if
+                    Boolean checkemail = DB.checkemail(emails);
+                    if (checkemail==false) {
+                        Boolean insert = DB.insertData(emails,names,addresses,passwords,mobileNumbers);
+                        if (insert==true) {
+                            Toast.makeText(CreateActivity.this, "Registered Successful", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(CreateActivity.this,LoginActivity.class);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(CreateActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else Toast.makeText(CreateActivity.this, "User Already Exist", Toast.LENGTH_SHORT).show();
                 }
-//                Intent intent = new Intent(CreateActivity.this,LoginActivity.class);
-//                startActivity(intent);
             }
         });
 
