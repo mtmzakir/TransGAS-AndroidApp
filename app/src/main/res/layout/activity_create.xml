@@ -159,7 +159,7 @@
             android:textSize="16sp"/>
 
         <TextView
-            android:id="@+id/login"
+            android:id="@+id/loginButton"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:fontFamily="@font/inter_bold"
