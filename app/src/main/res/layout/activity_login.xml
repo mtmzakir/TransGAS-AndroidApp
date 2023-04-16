@@ -34,7 +34,7 @@
             android:textColorHighlight="@color/light_yellow"
             android:textSize="20sp" />
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/email1"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_marginTop="15dp"
@@ -48,7 +48,7 @@
             android:textColorHint="@color/yellow"
             android:textSize="20sp" />
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/password1"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_marginTop="15dp"

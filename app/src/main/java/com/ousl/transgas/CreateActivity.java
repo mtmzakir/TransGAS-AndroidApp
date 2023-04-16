@@ -8,11 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CreateActivity extends AppCompatActivity {
     Button createButton;
     EditText name, email , address , mobileNumber, password;
     TextView loginButton;
+    DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,15 +26,25 @@ public class CreateActivity extends AppCompatActivity {
         address = (EditText) findViewById(R.id.address);
         mobileNumber = (EditText) findViewById(R.id.mobileNumber);
         password = (EditText) findViewById(R.id.password);
-
         createButton = findViewById(R.id.createButton);
         loginButton = findViewById(R.id.loginButton);
+        DB = new DBHelper(this);
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CreateActivity.this,LoginActivity.class);
-                startActivity(intent);
-                finish();
+                String emails = email.getText().toString();
+                String passwords = password.getText().toString();
+                String names = name.getText().toString();
+                String mobileNumbers = mobileNumber.getText().toString();
+                String addresses = address.getText().toString();
+
+                if (emails.equals("") || passwords.equals("") || names.equals("") || mobileNumbers.equals("") || addresses.equals(""))
+                    Toast.makeText(CreateActivity.this, "Enter All Fields", Toast.LENGTH_SHORT).show();
+                else {
+                    if
+                }
+//                Intent intent = new Intent(CreateActivity.this,LoginActivity.class);
+//                startActivity(intent);
             }
         });
 

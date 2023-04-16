@@ -1,6 +1,8 @@
 package com.ousl.transgas;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -16,11 +18,45 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
+        MyDB.execSQL("create Table users(name TEXT primary key, password TEXT, email TEXT, address TEXT, mobileNumber TEXT)");
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase MyDB, int i, int i1) {
+        MyDB.execSQL("drop Table if exists users");
 
+    }
+
+    public Boolean insertData(String name, String password, String email, String address, String mobileNumber) {
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name",name);
+        contentValues.put("email",email);
+        contentValues.put("password",password);
+        contentValues.put("address",address);
+        contentValues.put("mobileNumber",mobileNumber);
+        long result = MyDB.insert("users",null,contentValues);
+        if(result==-1) return false;
+        else
+            return true;
+    }
+
+    public Boolean checkemail(String email) {
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select * from users where email=?",new String[] {email});
+        if (cursor.getCount()>0)
+            return true;
+        else
+            return false;
+    }
+
+    public Boolean checkemailpassword(String email, String password) {
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select * from users where email=? and password=?",new String[] {email,password});
+        if (cursor.getCount()>0)
+            return true;
+        else
+            return false;
     }
 }
