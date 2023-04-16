@@ -32,20 +32,20 @@ public class CreateActivity extends AppCompatActivity {
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String emails = email.getText().toString();
-                String passwords = password.getText().toString();
                 String names = name.getText().toString();
-                String mobileNumbers = mobileNumber.getText().toString();
+                String emails = email.getText().toString();
                 String addresses = address.getText().toString();
+                String mobileNumbers = mobileNumber.getText().toString();
+                String passwords = password.getText().toString();
 
-                if (emails.equals("") || passwords.equals("") || names.equals("") || mobileNumbers.equals("") || addresses.equals(""))
+                if (names.equals("") || emails.equals("") || addresses.equals("") || mobileNumbers.equals("") || passwords.equals(""))
                     Toast.makeText(CreateActivity.this, "Enter All Fields", Toast.LENGTH_SHORT).show();
                 else {
                     Boolean checkemail = DB.checkemail(emails);
                     if (checkemail==false) {
-                        Boolean insert = DB.insertData(emails,names,addresses,passwords,mobileNumbers);
+                        Boolean insert = DB.insertData(names,emails,addresses,mobileNumbers,passwords);
                         if (insert==true) {
-                            Toast.makeText(CreateActivity.this, "Registered Successful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CreateActivity.this, "Registation Successful", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(CreateActivity.this,LoginActivity.class);
                             startActivity(intent);
                         } else {
