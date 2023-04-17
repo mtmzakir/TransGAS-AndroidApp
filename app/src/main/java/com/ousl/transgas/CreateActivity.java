@@ -15,7 +15,7 @@ public class CreateActivity extends AppCompatActivity {
     Button createButton;
     ImageButton googleButton, facebookButton;
     EditText name, email , address , mobileNumber, password;
-    TextView loginButton;
+    TextView loginTextButton;
     DBHelper DB;
 
     @Override
@@ -29,7 +29,7 @@ public class CreateActivity extends AppCompatActivity {
         mobileNumber = (EditText) findViewById(R.id.mobileNumber);
         password = (EditText) findViewById(R.id.password);
         createButton = findViewById(R.id.createButton);
-        loginButton = findViewById(R.id.loginButton);
+        loginTextButton = findViewById(R.id.loginText);
         googleButton = findViewById(R.id.google_Button);
         facebookButton = findViewById(R.id.facebook_Button);
         DB = new DBHelper(this);
@@ -49,7 +49,7 @@ public class CreateActivity extends AppCompatActivity {
                     if (checkemail==false) {
                         Boolean insert = DB.insertData(names,emails,addresses,mobileNumbers,passwords);
                         if (insert==true) {
-                            Toast.makeText(CreateActivity.this, "Account Create Success \uD83D\uDE0A", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CreateActivity.this, "Account Create Successful \uD83D\uDE0A", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(CreateActivity.this,LoginActivity.class);
                             startActivity(intent);
                         } else {
@@ -61,7 +61,7 @@ public class CreateActivity extends AppCompatActivity {
             }
         });
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        loginTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openLoginPage();

@@ -61,7 +61,7 @@
 
 
         <TextView
-            android:id="@+id/backLogin"
+            android:id="@+id/backLoginText"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:fontFamily="@font/inter_bold"

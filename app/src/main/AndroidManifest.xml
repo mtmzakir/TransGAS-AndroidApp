@@ -32,7 +32,7 @@
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".CreateActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
@@ -40,7 +40,7 @@
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".CreateActivity"
+            android:name=".LoginActivity"
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
