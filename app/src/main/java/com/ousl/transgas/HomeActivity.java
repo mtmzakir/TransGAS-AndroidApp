@@ -34,7 +34,7 @@ import java.util.Locale;
 public class HomeActivity extends AppCompatActivity{
 
     FusedLocationProviderClient fusedLocationProviderClient;
-    TextView lattitude,longitude,address,city,country;
+    TextView address, viewCategory;
     ImageButton getLocation;
     private final static int REQUEST_CODE = 100;
 
@@ -44,8 +44,17 @@ public class HomeActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        //
+        //View All Categories
+        viewCategory = findViewById(R.id.view_all);
+        viewCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openCategoryPage();
+            }
+        });
 
+
+        //Location
         address = findViewById(R.id.address);
         getLocation = findViewById(R.id.getLocation);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
@@ -55,7 +64,6 @@ public class HomeActivity extends AppCompatActivity{
                 getLastLocation();
             }
         });
-
 
 
         //Navigation Bottom
@@ -90,6 +98,7 @@ public class HomeActivity extends AppCompatActivity{
         });
     }
 
+    //Location
     private void getLastLocation() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
             fusedLocationProviderClient.getLastLocation()
@@ -128,6 +137,10 @@ public class HomeActivity extends AppCompatActivity{
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+    public void openCategoryPage() {
+        startActivity(new Intent(getApplicationContext(),CategoriesActivity.class));
+        overridePendingTransition(0,0);
     }
 }
 

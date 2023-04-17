@@ -99,7 +99,8 @@
         android:clickable="true"
         android:layout_marginTop="4dp"
         android:layout_marginRight="15dp"
-        android:text="View All" />
+        android:text="View All"
+        tools:ignore="TouchTargetSizeCheck"/>
 
     <RelativeLayout
         android:id="@+id/list1"
@@ -109,6 +110,7 @@
         android:layout_below="@+id/view_all"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <ImageButton
@@ -166,7 +168,7 @@
         android:text="Top Selling" />
 
     <TextView
-        android:id="@+id/view_2"
+        android:id="@+id/view_all2"
         android:layout_alignEnd="@id/top_selling"
         android:layout_alignParentEnd="true"
         android:layout_width="wrap_content"
@@ -178,7 +180,8 @@
         android:clickable="true"
         android:layout_marginTop="4dp"
         android:layout_marginRight="15dp"
-        android:text="View All" />
+        android:text="View All"
+        tools:ignore="TouchTargetSizeCheck"/>
 
 
 
