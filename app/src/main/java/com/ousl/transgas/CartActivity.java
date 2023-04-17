@@ -47,4 +47,11 @@ public class CartActivity extends AppCompatActivity {
             }
         });
     }
+
+    //Back Press Home
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+        overridePendingTransition(0,0);
+    }
 }

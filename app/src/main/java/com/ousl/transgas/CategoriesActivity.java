@@ -1,7 +1,10 @@
 package com.ousl.transgas;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -47,5 +50,13 @@ public class CategoriesActivity extends AppCompatActivity {
                 return false;
             }
         });
+
     }
+
+    //Back Press Home
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+        overridePendingTransition(0,0);
+        }
 }
