@@ -54,19 +54,30 @@
         android:text="Current Location" />
 
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="50dp"
+        tools:ignore="MissingConstraints"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/banner" />
+        android:layout_below="@+id/address"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"/>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        app:srcCompat="@drawable/banner" />-->
 
     <SearchView
         android:id="@+id/search"
         android:layout_width="500dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/viewPager"
         android:background="@drawable/edit_text"
         android:layout_marginStart="15dp"
         android:layout_marginTop="8dp"
