@@ -4,7 +4,7 @@
     android:id="@+id/imageSlide"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:adjustViewBounds="true">
-<!--    app:riv_corner_radious="12dp"-->
+    android:adjustViewBounds="true"
+    app:riv_corner_radius="12dp">
 
 </com.makeramen.roundedimageview.RoundedImageView>

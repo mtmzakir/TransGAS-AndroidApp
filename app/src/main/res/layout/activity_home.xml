@@ -65,14 +65,6 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="15dp"/>
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="200dp"-->
-<!--        android:layout_marginTop="50dp"-->
-<!--        android:layout_gravity="center"-->
-<!--        app:srcCompat="@drawable/banner" />-->
-
     <SearchView
         android:id="@+id/search"
         android:layout_width="500dp"

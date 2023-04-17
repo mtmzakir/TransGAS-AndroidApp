@@ -86,7 +86,7 @@ public class HomeActivity extends AppCompatActivity{
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 slideHandler.removeCallbacks(sliderRunnable);
-                slideHandler.postDelayed(sliderRunnable,2000);
+                slideHandler.postDelayed(sliderRunnable,3000);
             }
         });
 
