@@ -63,10 +63,13 @@ public class HomeActivity extends AppCompatActivity{
         sliderItem.add(new SlideItem(R.drawable.slide1));
         sliderItem.add(new SlideItem(R.drawable.slide2));
         sliderItem.add(new SlideItem(R.drawable.slide3));
+        sliderItem.add(new SlideItem(R.drawable.slide4));
+        sliderItem.add(new SlideItem(R.drawable.slide5));
+        sliderItem.add(new SlideItem(R.drawable.slide6));
 
         viewPager2.setAdapter(new SlideAdapter(sliderItem,viewPager2));
         viewPager2.setClipToPadding(false);
-        viewPager2.setOffscreenPageLimit(3); //Limit Images
+        viewPager2.setOffscreenPageLimit(6); //Limit Images
         viewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
 
         CompositePageTransformer compositionTransform = new CompositePageTransformer();
