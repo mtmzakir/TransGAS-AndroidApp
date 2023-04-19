@@ -1,0 +1,134 @@
+[
+  {
+    "name":"Litro GAS",
+    "address":"Colombo",
+    "delivery_charge": 200.00,
+    "image":"https://www.bulldogtribune.com/wp-content/uploads/2018/05/chicagos20logo_color202_0001_62111459-900x651.jpg",
+
+    "menus": [
+      {
+        "name": "Litro GAS 2.5kg",
+        "price": 1000,
+        "rating": 4.5,
+        "url": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/7/17/1/FN_Simple-Spaghetti-with-Tomato-Sauce_s4x3.jpg.rend.hgtvcom.826.620.suffix/1408069256188.jpeg"
+      },
+      {
+        "name": "Litro GAS 5kg",
+        "price": 2000,
+        "rating": 4.5,
+        "url": "https://lh3.googleusercontent.com/p/AF1QipN-WboPX7pEgnNqg78wranzezsGMdPfwCoxQjdJ=s1280-p-no-v1"
+      },
+      {
+        "name": "Litro GAS 12.5kg",
+        "price": 3000,
+        "rating": 4.6,
+        "url": "https://149366112.v2.pressablecdn.com/wp-content/uploads/2017/08/blah.jpg"
+      },
+      {
+        "name": "Litro GAS 37.5kg",
+        "price": 5000,
+        "rating": 4.2,
+        "url": "https://www.spendwithpennies.com/wp-content/uploads/2013/10/Cheese-Sticks-SpendWithPennies-2-21-500x500.jpg"
+      }
+    ]
+  },
+  {
+    "name":"Laugfs GAS",
+    "address":"Colombo",
+    "delivery_charge": 250.00,
+    "image":"https://www.bulldogtribune.com/wp-content/uploads/2018/05/chicagos20logo_color202_0001_62111459-900x651.jpg",
+
+    "menus": [
+      {
+        "name": "Laugfs GAS 2.5kg",
+        "price": 1000,
+        "rating": 4.5,
+        "url": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/7/17/1/FN_Simple-Spaghetti-with-Tomato-Sauce_s4x3.jpg.rend.hgtvcom.826.620.suffix/1408069256188.jpeg"
+      },
+      {
+        "name": "Laugfs GAS 5kg",
+        "price": 2000,
+        "rating": 4.5,
+        "url": "https://lh3.googleusercontent.com/p/AF1QipN-WboPX7pEgnNqg78wranzezsGMdPfwCoxQjdJ=s1280-p-no-v1"
+      },
+      {
+        "name": "Laugfs GAS 12.5kg",
+        "price": 3000,
+        "rating": 4.6,
+        "url": "https://149366112.v2.pressablecdn.com/wp-content/uploads/2017/08/blah.jpg"
+      },
+      {
+        "name": "Laugfs GAS 37.5kg",
+        "price": 5000,
+        "rating": 4.2,
+        "url": "https://www.spendwithpennies.com/wp-content/uploads/2013/10/Cheese-Sticks-SpendWithPennies-2-21-500x500.jpg"
+      }
+    ]
+  },
+  {
+    "name":"Empty Cylinders",
+    "address":"Colombo",
+    "delivery_charge": 100.00,
+    "image":"https://www.bulldogtribune.com/wp-content/uploads/2018/05/chicagos20logo_color202_0001_62111459-900x651.jpg",
+
+    "menus": [
+      {
+        "name": "2.5kg Cylinder",
+        "price": 6000,
+        "rating": 4.5,
+        "url": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/7/17/1/FN_Simple-Spaghetti-with-Tomato-Sauce_s4x3.jpg.rend.hgtvcom.826.620.suffix/1408069256188.jpeg"
+      },
+      {
+        "name": "5kg Cylinder",
+        "price": 8000,
+        "rating": 4.5,
+        "url": "https://lh3.googleusercontent.com/p/AF1QipN-WboPX7pEgnNqg78wranzezsGMdPfwCoxQjdJ=s1280-p-no-v1"
+      },
+      {
+        "name": "12.5kg Cylinder",
+        "price": 12000,
+        "rating": 4.6,
+        "url": "https://149366112.v2.pressablecdn.com/wp-content/uploads/2017/08/blah.jpg"
+      },
+      {
+        "name": "37.5kg Cylinder",
+        "price": 15000,
+        "rating": 4.2,
+        "url": "https://www.spendwithpennies.com/wp-content/uploads/2013/10/Cheese-Sticks-SpendWithPennies-2-21-500x500.jpg"
+      }
+    ]
+  },
+  {
+    "name":"Accessories",
+    "address":"Colombo",
+    "delivery_charge": 50.00,
+    "image":"https://www.bulldogtribune.com/wp-content/uploads/2018/05/chicagos20logo_color202_0001_62111459-900x651.jpg",
+
+    "menus": [
+      {
+        "name": "2.5kg Cylinder",
+        "price": 6000,
+        "rating": 4.5,
+        "url": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/7/17/1/FN_Simple-Spaghetti-with-Tomato-Sauce_s4x3.jpg.rend.hgtvcom.826.620.suffix/1408069256188.jpeg"
+      },
+      {
+        "name": "5kg Cylinder",
+        "price": 8000,
+        "rating": 4.5,
+        "url": "https://lh3.googleusercontent.com/p/AF1QipN-WboPX7pEgnNqg78wranzezsGMdPfwCoxQjdJ=s1280-p-no-v1"
+      },
+      {
+        "name": "12.5kg Cylinder",
+        "price": 12000,
+        "rating": 4.6,
+        "url": "https://149366112.v2.pressablecdn.com/wp-content/uploads/2017/08/blah.jpg"
+      },
+      {
+        "name": "37.5kg Cylinder",
+        "price": 15000,
+        "rating": 4.2,
+        "url": "https://www.spendwithpennies.com/wp-content/uploads/2013/10/Cheese-Sticks-SpendWithPennies-2-21-500x500.jpg"
+      }
+    ]
+  }
+]
