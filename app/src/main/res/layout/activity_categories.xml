@@ -11,9 +11,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:text="Categories"
-        android:textSize="50dp"
-        android:layout_centerInParent="true"/>
+        android:textSize="50dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

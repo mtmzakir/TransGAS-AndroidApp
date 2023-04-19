@@ -117,43 +117,29 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/google_Button"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:id="@+id/litro_gas"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
             android:background="@color/white"
-            android:src="@drawable/litro" />
+            android:src="@drawable/litrogas" />
 
         <ImageButton
-            android:id="@+id/facebook_Button"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_toRightOf="@+id/google_Button"
+            android:id="@+id/laugfs_gas"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/litro_gas"
             android:background="@color/white"
-            android:src="@drawable/laugfs" />
+            android:src="@drawable/laugfsgas" />
 
         <ImageButton
-            android:id="@+id/google_Button2"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_toRightOf="@+id/facebook_Button"
+            android:id="@+id/empty_gas"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_toRightOf="@+id/laugfs_gas"
             android:background="@color/white"
-            android:src="@drawable/hydrogen" />
-
-        <ImageButton
-            android:id="@+id/facebook_Button2"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_toRightOf="@+id/google_Button2"
-            android:background="@color/white"
-            android:src="@drawable/helium" />
-
-        <ImageButton
-            android:id="@+id/google_Button3"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_toRightOf="@+id/facebook_Button2"
-            android:background="@color/white"
-            android:src="@drawable/oxygen" />
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/emptygas" />
 
     </RelativeLayout>
 
