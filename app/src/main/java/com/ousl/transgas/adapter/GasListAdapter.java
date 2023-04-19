@@ -41,7 +41,7 @@ public class GasListAdapter extends RecyclerView.Adapter<GasListAdapter.MyViewHo
     public void onBindViewHolder(@NonNull GasListAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.gasName.setText(gasModelList.get(position).getName());
         holder.gasAddress.setText("Location: " + gasModelList.get(position).getAddress());
-        holder.gasDeliveryCharge.setText("Delivery Charge: Rs." + gasModelList.get(position).getDelivery_charge());
+        holder.gasDeliveryCharge.setText("Delivery Charge Rs." + gasModelList.get(position).getDelivery_charge()+"0");
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

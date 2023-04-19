@@ -19,7 +19,7 @@
 
         <ImageView android:id="@+id/thumbImage"
             android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_height="80dp"
             android:layout_gravity="start"
             android:layout_margin="10dp"
             />
@@ -31,7 +31,8 @@
             android:layout_marginStart="140dp"
             android:layout_gravity="center_vertical"
             >
-            <TextView android:id="@+id/gasName"
+            <TextView
+                android:id="@+id/gasName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="22sp"
@@ -39,8 +40,7 @@
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginTop="05dp"
-                />
+                android:layout_marginTop="5dp" />
 
             <TextView android:id="@+id/gasAddress"
                 android:layout_width="wrap_content"
