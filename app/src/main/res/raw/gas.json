@@ -3,7 +3,7 @@
     "name":"Litro GAS",
     "address":"in All Areas",
     "delivery_charge": 200.00,
-    "image":"https://www.bulldogtribune.com/wp-content/uploads/2018/05/chicagos20logo_color202_0001_62111459-900x651.jpg",
+    "image":"https://i.ibb.co/9VfJZYj/litrogas.png",
 
     "menus": [
       {
@@ -36,7 +36,7 @@
     "name":"Laugfs GAS",
     "address":"in All Areas",
     "delivery_charge": 250.00,
-    "image":"https://www.bulldogtribune.com/wp-content/uploads/2018/05/chicagos20logo_color202_0001_62111459-900x651.jpg",
+    "image":"https://i.ibb.co/X3PpZWZ/laugfsgas.png",
 
     "menus": [
       {
@@ -67,9 +67,9 @@
   },
   {
     "name":"Empty Cylinders",
-    "address":"in All Areas",
+    "address":"in Island-wide",
     "delivery_charge": 100.00,
-    "image":"https://www.bulldogtribune.com/wp-content/uploads/2018/05/chicagos20logo_color202_0001_62111459-900x651.jpg",
+    "image":"https://i.ibb.co/CP0K5t5/emptygas.png",
 
     "menus": [
       {

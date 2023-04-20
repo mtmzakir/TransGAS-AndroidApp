@@ -18,6 +18,7 @@ public class ForgotActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot);
+        getSupportActionBar().hide();
 
         backLoginTextButton = findViewById(R.id.backLoginText);
         resetButton = findViewById(R.id.resetButton);

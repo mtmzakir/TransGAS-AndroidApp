@@ -1,6 +1,7 @@
 package com.ousl.transgas;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -34,6 +35,7 @@ public class CategoriesActivity extends AppCompatActivity implements GasListAdap
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
+        getSupportActionBar().hide();
 
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.categories);
@@ -101,7 +103,6 @@ public class CategoriesActivity extends AppCompatActivity implements GasListAdap
 
         return  gasList;
     }
-
 
     //Back Press Home
     @Override

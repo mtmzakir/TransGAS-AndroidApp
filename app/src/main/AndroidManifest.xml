@@ -18,14 +18,17 @@
         tools:targetApi="31">
         <activity
             android:name=".AccountActivity"
+            android:label="Account"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".CartActivity"
+            android:label="Cart"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".CategoriesActivity"
+            android:label="Categories"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity

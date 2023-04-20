@@ -112,20 +112,20 @@
         android:layout_gravity="center"
         android:layout_below="@+id/view_all"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/litro_gas"
-            android:layout_width="120dp"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:background="@color/white"
             android:src="@drawable/litrogas" />
 
         <ImageButton
             android:id="@+id/laugfs_gas"
-            android:layout_width="120dp"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/litro_gas"
@@ -134,12 +134,21 @@
 
         <ImageButton
             android:id="@+id/empty_gas"
-            android:layout_width="120dp"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_toRightOf="@+id/laugfs_gas"
             android:background="@color/white"
             android:layout_marginLeft="5dp"
             android:src="@drawable/emptygas" />
+
+        <ImageButton
+            android:id="@+id/access_gas"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_toRightOf="@+id/empty_gas"
+            android:background="@color/white"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/accessgas" />
 
     </RelativeLayout>
 

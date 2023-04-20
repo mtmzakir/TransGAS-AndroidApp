@@ -22,6 +22,7 @@ public class CreateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
+        getSupportActionBar().hide();
 
         name = (EditText) findViewById(R.id.name);
         email = (EditText) findViewById(R.id.email);
