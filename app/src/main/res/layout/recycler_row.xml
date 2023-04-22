@@ -14,8 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:cardCornerRadius="10dp"
-        android:layout_margin="20dp"
-        >
+        android:layout_margin="20dp">
 
         <ImageView android:id="@+id/thumbImage"
             android:layout_width="120dp"
@@ -37,31 +36,29 @@
                 android:layout_height="wrap_content"
                 android:textSize="22sp"
                 android:fontFamily="@font/inter_bold"
-                android:textColor="@color/maroon"
+                android:textColor="@color/black"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="5dp" />
+                android:layout_marginEnd="10dp" />
 
-            <TextView android:id="@+id/gasAddress"
+            <TextView
+                android:id="@+id/gasAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:fontFamily="@font/inter_medium"
-                android:textColor="@color/yellow"
+                android:textColor="@color/black"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                />
-            <TextView android:id="@+id/gasDeliveryCharge"
+                android:layout_marginEnd="10dp" />
+
+            <TextView
+                android:id="@+id/gasDeliveryCharge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:fontFamily="@font/inter_medium"
-                android:textColor="@color/yellow"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                />
-
-
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/yellow"
+                android:textSize="12sp" />
 
         </LinearLayout>
 
