@@ -27,7 +27,7 @@
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".CategoriesActivity"
+            android:name=".HomeActivity"
             android:label="Categories"
             android:screenOrientation="portrait"
             android:exported="false" />
@@ -44,7 +44,7 @@
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".CategoriesActivity"
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
