@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,10 +44,15 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MyView
         holder.menuName.setText(menuList.get(position).getName());
         holder.menuPrice.setText("Rs." + menuList.get(position).getPrice()+"0");
         holder.menuRating.setText("★" + menuList.get(position).getRating());
-        holder.addToCardButton.setOnClickListener(new View.OnClickListener() {
+        holder.addToCartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Menu menu  = menuList.get(position);
+                menu.setTotalInCart(1);
+                clickListener.onAddToCartClick(menu);
+                holder.addMoreLayout.setVisibility(View.VISIBLE);
+                holder.addToCartButton.setVisibility(View.GONE);
+                holder.tvCount.setText(menu.getTotalInCart()+"");
             }
         });
 
@@ -70,8 +76,12 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MyView
         TextView menuName;
         TextView menuPrice;
         TextView menuRating;
-        TextView addToCardButton;
+        TextView addToCartButton;
         ImageView thumbImage;
+        ImageView imageMinus;
+        ImageView imageAddOne;
+        TextView  tvCount;
+        LinearLayout addMoreLayout;
 
         public MyViewHolder(View view) {
             super(view);
@@ -79,7 +89,12 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MyView
             menuPrice = view.findViewById(R.id.menuPrice);
             menuRating = view.findViewById(R.id.menuRating);
             thumbImage = view.findViewById(R.id.thumbImage);
-            addToCardButton = view.findViewById(R.id.addToCartButton);
+            addToCartButton = view.findViewById(R.id.addToCartButton);
+            imageMinus = view.findViewById(R.id.imageMinus);
+            imageAddOne = view.findViewById(R.id.imageAddOne);
+            tvCount = view.findViewById(R.id.tvCount);
+
+            addMoreLayout  = view.findViewById(R.id.addMoreLayout);
 
         }
     }

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -13,7 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:cardCornerRadius="5dp"
-        android:layout_margin="5dp">
+        app:cardBackgroundColor="#F5F5F5"
+        android:layout_margin="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,16 +24,17 @@
             android:layout_gravity="center_vertical">
 
             <ImageView android:id="@+id/thumbImage"
-                android:layout_width="80dp"
+                android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="5dp" />
 
             <TextView android:id="@+id/menuName"
                 android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:fontFamily="@font/inter_medium"
+                android:textSize="18sp"
+                android:fontFamily="@font/inter_bold"
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
@@ -40,6 +43,7 @@
             <TextView android:id="@+id/menuRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:textSize="16sp"
                 android:fontFamily="@font/inter_bold"
                 android:textColor="@color/yellow"
@@ -47,9 +51,10 @@
                 android:layout_marginEnd="10dp" />
 
             <TextView android:id="@+id/menuPrice"
+                android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:fontFamily="@font/inter_medium"
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
@@ -77,33 +82,29 @@
                 android:layout_margin="10dp"
                 android:orientation="horizontal">
 
-<!--                <ImageView android:id="@+id/imageMinus"-->
-<!--                    android:layout_width="30dp"-->
-<!--                    android:layout_height="30dp"-->
-<!--                    android:layout_gravity="center_horizontal"-->
-<!--                    android:src="@drawable/ic_remove_circle"-->
-<!--                    app:tint="@color/purple_700" />-->
-
+                <ImageView android:id="@+id/imageMinus"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/remove_icon" />
 
                 <TextView android:id="@+id/tvCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_marginStart="05dp"
-                    android:layout_marginEnd="05dp"
+                    android:textSize="19sp"
                     android:textColor="@color/black"
+                    android:fontFamily="@font/inter_bold"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
                     android:text="1"
-                    android:gravity="center_horizontal"
-                    />
+                    android:gravity="center_horizontal" />
 
-<!--                <ImageView android:id="@+id/imageAddOne"-->
-<!--                    android:layout_width="30dp"-->
-<!--                    android:layout_height="30dp"-->
-<!--                    android:layout_gravity="center_horizontal"-->
-<!--                    android:src="@drawable/ic_add_circle"-->
-<!--                    app:tint="@color/purple_700"-->
-<!--                    />-->
-
+                <ImageView
+                    android:id="@+id/imageAddOne"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/add_icon" />
 
             </LinearLayout>
 
