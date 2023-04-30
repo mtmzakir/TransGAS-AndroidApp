@@ -1,54 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:usesCleartextTraffic="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.TransGAS"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".AccountActivity"
-            android:label="Account"
-            android:screenOrientation="portrait"
+            android:name=".GasMenuActivity"
             android:exported="false" />
+        <activity
+            android:name=".AccountActivity"
+            android:exported="false"
+            android:label="Account"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".CartActivity"
+            android:exported="false"
             android:label="Cart"
-            android:screenOrientation="portrait"
-            android:exported="false" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".HomeActivity"
+            android:exported="false"
             android:label="Categories"
-            android:screenOrientation="portrait"
-            android:exported="false" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".CreateActivity"
-            android:screenOrientation="portrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ForgotActivity"
-            android:screenOrientation="portrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".CategoriesActivity"
-            android:screenOrientation="portrait"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

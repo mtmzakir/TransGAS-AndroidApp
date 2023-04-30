@@ -113,6 +113,9 @@ public class CategoriesActivity extends AppCompatActivity implements GasListAdap
 
     @Override
     public void onItemClick(GasModel gasModel) {
+        Intent intent = new Intent (CategoriesActivity.this, GasMenuActivity.class);
+        intent.putExtra("GasModel",gasModel);
+        startActivity(intent);
 
     }
 }

@@ -18,6 +18,15 @@
         android:gravity="center"
         android:layout_height="60dp"/>
 
+    <ImageButton
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="2dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_notifications_24"
+        android:background="@color/white"
+        android:layout_alignParentRight="true"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
