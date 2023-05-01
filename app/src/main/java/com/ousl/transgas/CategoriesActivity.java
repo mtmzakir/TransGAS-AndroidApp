@@ -39,7 +39,7 @@ public class CategoriesActivity extends AppCompatActivity implements GasListAdap
 
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.categories);
-        bottomNavigationView.setLabelVisibilityMode(NavigationBarView.LABEL_VISIBILITY_UNLABELED);
+//        bottomNavigationView.setLabelVisibilityMode(NavigationBarView.LABEL_VISIBILITY_UNLABELED);
 
         List<GasModel> gasModelList= getGasData();
         initRecyclerView(gasModelList);
