@@ -62,6 +62,7 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MyView
                 clickListener.onAddToCartClick(menuList.get(position));
             }
         });
+
         Glide.with(holder.thumbImage)
                 .load(menuList.get(position).getUrl())
                 .into(holder.thumbImage);
