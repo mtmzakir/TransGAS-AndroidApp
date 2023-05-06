@@ -40,7 +40,8 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="5dp" />
 
-            <TextView android:id="@+id/menuRating"
+            <TextView
+                android:id="@+id/menuRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -50,7 +51,8 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp" />
 
-            <TextView android:id="@+id/menuPrice"
+            <TextView
+                android:id="@+id/menuPrice"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -60,7 +62,8 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp" />
 
-            <TextView android:id="@+id/addToCartButton"
+            <TextView
+                android:id="@+id/addToCartButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"

@@ -2,7 +2,7 @@
   {
     "name":"Litro GAS",
     "address":"Colombo",
-    "delivery_charge": 200.00,
+    "delivery_charge": 200,
     "image":"https://i.ibb.co/9VfJZYj/litrogas.png",
 
     "menus": [
@@ -35,7 +35,7 @@
   {
     "name":"Laugfs GAS",
     "address":"Colombo",
-    "delivery_charge": 250.00,
+    "delivery_charge": 250,
     "image":"https://i.ibb.co/X3PpZWZ/laugfsgas.png",
 
     "menus": [
@@ -68,7 +68,7 @@
   {
     "name":"Empty Cylinders",
     "address":"Colombo",
-    "delivery_charge": 100.00,
+    "delivery_charge": 100,
     "image":"https://i.ibb.co/CP0K5t5/emptygas.png",
 
     "menus": [
@@ -101,7 +101,7 @@
   {
     "name":"Accessories",
     "address":"Colombo",
-    "delivery_charge": 50.00,
+    "delivery_charge": 50,
     "image":"https://i.ibb.co/CP0K5t5/emptygas.png",
 
     "menus": [

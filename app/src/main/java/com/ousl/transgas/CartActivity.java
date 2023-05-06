@@ -1,61 +1,115 @@
 package com.ousl.transgas;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.TextView;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
+import com.ousl.transgas.adapter.PlaceYourOrderAdapter;
+import com.ousl.transgas.model.GasModel;
+import com.ousl.transgas.model.Menu;
 
 public class CartActivity extends AppCompatActivity {
 
-    BottomNavigationView bottomNavigationView;
+    RecyclerView cartItemsRecyclerView;
+    TextView tvSubtotalAmount, tvDeliveryChargeAmount, tvDeliveryCharge, tvTotalAmount, buttonPlaceYourOrder;
+    boolean isDeliveryOn;
+    PlaceYourOrderAdapter placeYourOrderAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
-        getSupportActionBar().hide();
 
+        GasModel gasModel = getIntent().getParcelableExtra("GasModel");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(gasModel.getName());
+        actionBar.setSubtitle(gasModel.getAddress());
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
+        tvSubtotalAmount = findViewById(R.id.tvSubtotalAmount);
+        tvDeliveryChargeAmount = findViewById(R.id.tvDeliveryChargeAmount);
+        tvDeliveryCharge = findViewById(R.id.tvDeliveryCharge);
+        tvTotalAmount = findViewById(R.id.tvTotalAmount);
+        buttonPlaceYourOrder = findViewById(R.id.buttonPlaceYourOrder);
 
-        //Bottom Navigation Bar
-        bottomNavigationView = findViewById(R.id.bottom_navigator);
-        bottomNavigationView.setSelectedItemId(R.id.cart);
-        //bottomNavigationView.setLabelVisibilityMode(NavigationBarView.LABEL_VISIBILITY_UNLABELED);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        cartItemsRecyclerView = findViewById(R.id.cartItemsRecyclerView);
+
+        buttonPlaceYourOrder.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId())
-                {
-                    case R.id.cart:
-                        return true;
-
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.categories:
-                        startActivity(new Intent(getApplicationContext(),CategoriesActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.account:
-                        startActivity(new Intent(getApplicationContext(),AccountActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-                return false;
+            public void onClick(View v) {
+                onPlaceOrderButtonClick(gasModel);
             }
         });
+
+        initRecyclerView(gasModel);
+        calculateTotalAmount(gasModel);
     }
 
-    //Back Press Home
+    private void calculateTotalAmount(GasModel gasModel) {
+        float subTotalAmount = 0f;
+
+        for (Menu m : gasModel.getMenus()) {
+            subTotalAmount += m.getPrice() * m.getTotalInCart();
+        }
+
+        tvSubtotalAmount.setText("Rs." + String.format("%.2f", subTotalAmount));
+        tvDeliveryChargeAmount.setText("Rs." + String.format("%.2f", gasModel.getDelivery_charge()));
+        subTotalAmount += gasModel.getDelivery_charge();
+        tvTotalAmount.setText("Rs." + String.format("%.2f", subTotalAmount));
+    }
+
+    private void onPlaceOrderButtonClick(GasModel gasModel) {
+        //start success activity..
+        Intent i = new Intent(CartActivity.this, SetDetailsActivity.class);
+        i.putExtra("GasModel", gasModel);
+        startActivityForResult(i, 1000);
+    }
+
+    private void initRecyclerView(GasModel gasModel) {
+        cartItemsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        placeYourOrderAdapter = new PlaceYourOrderAdapter(gasModel.getMenus());
+        cartItemsRecyclerView.setAdapter(placeYourOrderAdapter);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        if (requestCode == 1000) {
+            setResult(Activity.RESULT_OK);
+            finish();
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+            default:
+                //do nothing
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-        overridePendingTransition(0,0);
+        super.onBackPressed();
+        setResult(Activity.RESULT_CANCELED);
+        finish();
     }
 }
