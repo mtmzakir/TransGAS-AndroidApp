@@ -18,15 +18,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".OrdersActivity"
+            android:exported="false" />
+        <activity
             android:name=".SetDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".GasMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".AccountActivity"
+            android:name=".ProfileActivity"
             android:exported="false"
-            android:label="Account"
+            android:label="Profile"
             android:screenOrientation="portrait" />
         <activity
             android:name=".CartActivity"
@@ -39,7 +42,7 @@
             android:label="Categories"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CategoriesActivity"
+            android:name=".LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -51,7 +54,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".CategoriesActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

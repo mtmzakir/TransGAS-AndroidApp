@@ -10,10 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,9 +23,7 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -132,13 +127,13 @@ public class HomeActivity extends AppCompatActivity{
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.cart:
-                        startActivity(new Intent(getApplicationContext(),CartActivity.class));
+                    case R.id.orders:
+                        startActivity(new Intent(getApplicationContext(),OrdersActivity.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.account:
-                        startActivity(new Intent(getApplicationContext(),AccountActivity.class));
+                    case R.id.profile:
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

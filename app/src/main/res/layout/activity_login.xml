@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".LoginActivity">
 
     <LinearLayout
@@ -20,42 +21,44 @@
             app:srcCompat="@drawable/logo" />
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:fontFamily="@font/inter_bold"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/play_bold"
             android:text="Welcome,"
             android:textColor="@color/maroon"
             android:textSize="32sp" />
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:fontFamily="@font/inter_bold"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/play"
             android:text="Login to Get Started"
             android:textColor="@color/maroon"
             android:textColorHighlight="@color/light_yellow"
             android:textSize="20sp" />
         <EditText
-            android:id="@+id/email1"
+            android:id="@+id/email"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_marginTop="15dp"
             android:background="@drawable/edit_text"
             android:drawableLeft="@drawable/baseline_email_24"
             android:drawablePadding="15dp"
-            android:fontFamily="@font/inter_medium"
+            android:fontFamily="@font/fira"
+            android:textColor="@color/maroon"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:padding="15dp"
             android:textColorHint="@color/yellow"
             android:textSize="20sp" />
         <EditText
-            android:id="@+id/password1"
+            android:id="@+id/password"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_marginTop="15dp"
             android:background="@drawable/edit_text"
             android:drawableLeft="@drawable/baseline_lock_24"
             android:drawablePadding="15dp"
-            android:fontFamily="@font/inter_medium"
+            android:fontFamily="@font/fira"
+            android:textColor="@color/maroon"
             android:hint="Password"
             android:inputType="textPassword"
             android:padding="15dp"
@@ -66,7 +69,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:clickable="true"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/play_bold"
             android:gravity="right"
             android:padding="10dp"
             android:text="Forgot Password?"
@@ -81,13 +84,13 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/main_button"
             android:baselineAligned="false"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/play_bold"
             android:text="Login"
             android:textSize="24sp" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/play"
             android:gravity="center"
             android:paddingTop="20dp"
             android:text="or continue with"
@@ -121,7 +124,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/play"
             android:gravity="center"
             android:paddingTop="60dp"
             android:text="Don’t Have an Account?"
@@ -132,11 +135,14 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:clickable="true"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/play_bold"
             android:gravity="center"
             android:text="Create New Account"
             android:textColor="@color/maroon"
             android:textSize="20sp"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
     </LinearLayout>
-</ScrollView>
+</RelativeLayout>

@@ -1,21 +1,16 @@
 package com.ousl.transgas;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.gson.Gson;
-import com.ousl.transgas.R;
-import com.ousl.transgas.adapter.GasListAdapter;
+import com.ousl.transgas.adapters.GasListAdapter;
 import com.ousl.transgas.model.GasModel;
 
 import java.io.BufferedReader;
@@ -58,13 +53,13 @@ public class CategoriesActivity extends AppCompatActivity implements GasListAdap
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.cart:
-                        startActivity(new Intent(getApplicationContext(),CartActivity.class));
+                    case R.id.orders:
+                        startActivity(new Intent(getApplicationContext(),OrdersActivity.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.account:
-                        startActivity(new Intent(getApplicationContext(),AccountActivity.class));
+                    case R.id.profile:
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

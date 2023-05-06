@@ -1,4 +1,4 @@
-package com.ousl.transgas.adapter;
+package com.ousl.transgas.adapters;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.ousl.transgas.R;
-import com.ousl.transgas.model.GasModel;
 import com.ousl.transgas.model.Menu;
 
 import java.util.List;

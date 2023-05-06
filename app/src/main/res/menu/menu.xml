@@ -9,11 +9,11 @@
         android:title="Categories"
         android:icon="@drawable/ic_category_24"/>
     <item
-        android:id="@+id/cart"
-        android:title="Cart"
+        android:id="@+id/orders"
+        android:title="Orders"
         android:icon="@drawable/ic_shopping_cart_24"/>
     <item
-        android:id="@+id/account"
-        android:title="Account"
+        android:id="@+id/profile"
+        android:title="Profile"
         android:icon="@drawable/ic_account_circle_24"/>
 </menu>

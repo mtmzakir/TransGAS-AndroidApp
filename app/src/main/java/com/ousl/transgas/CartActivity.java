@@ -2,42 +2,35 @@ package com.ousl.transgas;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.ousl.transgas.adapter.PlaceYourOrderAdapter;
+import com.ousl.transgas.adapters.PlaceYourOrderAdapter;
 import com.ousl.transgas.model.GasModel;
 import com.ousl.transgas.model.Menu;
 
 public class CartActivity extends AppCompatActivity {
-
     RecyclerView cartItemsRecyclerView;
     TextView tvSubtotalAmount, tvDeliveryChargeAmount, tvDeliveryCharge, tvTotalAmount, buttonPlaceYourOrder;
-    boolean isDeliveryOn;
     PlaceYourOrderAdapter placeYourOrderAdapter;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
-
+        getSupportActionBar().hide();
         GasModel gasModel = getIntent().getParcelableExtra("GasModel");
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(gasModel.getName());
-        actionBar.setSubtitle(gasModel.getAddress());
-        actionBar.setDisplayHomeAsUpEnabled(true);
 
         tvSubtotalAmount = findViewById(R.id.tvSubtotalAmount);
         tvDeliveryChargeAmount = findViewById(R.id.tvDeliveryChargeAmount);
@@ -61,14 +54,14 @@ public class CartActivity extends AppCompatActivity {
     private void calculateTotalAmount(GasModel gasModel) {
         float subTotalAmount = 0f;
 
-        for (Menu m : gasModel.getMenus()) {
+        for(Menu m : gasModel.getMenus()) {
             subTotalAmount += m.getPrice() * m.getTotalInCart();
         }
 
-        tvSubtotalAmount.setText("Rs." + String.format("%.2f", subTotalAmount));
-        tvDeliveryChargeAmount.setText("Rs." + String.format("%.2f", gasModel.getDelivery_charge()));
+        tvSubtotalAmount.setText("Rs."+String.format("%.2f", subTotalAmount));
+        tvDeliveryChargeAmount.setText("Rs."+String.format("%.2f", gasModel.getDelivery_charge()));
         subTotalAmount += gasModel.getDelivery_charge();
-        tvTotalAmount.setText("Rs." + String.format("%.2f", subTotalAmount));
+        tvTotalAmount.setText("Rs."+String.format("%.2f", subTotalAmount));
     }
 
     private void onPlaceOrderButtonClick(GasModel gasModel) {
@@ -87,7 +80,7 @@ public class CartActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
-        if (requestCode == 1000) {
+        if(requestCode == 1000) {
             setResult(Activity.RESULT_OK);
             finish();
         }
@@ -98,7 +91,7 @@ public class CartActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()) {
-            case android.R.id.home:
+            case android.R.id.home :
                 finish();
             default:
                 //do nothing
