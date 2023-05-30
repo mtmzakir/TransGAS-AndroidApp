@@ -34,7 +34,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:fontFamily="@font/inter_bold"
+                android:fontFamily="@font/fira_bold"
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:textSize="16sp"
-                android:fontFamily="@font/inter_bold"
+                android:fontFamily="@font/fira_bold"
                 android:textColor="@color/yellow"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp" />
@@ -57,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:fontFamily="@font/inter_medium"
+                android:fontFamily="@font/fira_medium"
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp" />
@@ -69,10 +69,10 @@
                 android:textSize="16sp"
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
-                android:fontFamily="@font/inter_bold"
+                android:fontFamily="@font/fira_bold"
                 android:layout_marginEnd="10dp"
                 android:text="Add to cart"
-                android:background="@drawable/add_card_button"
+                android:background="@drawable/button_add_card"
                 android:layout_margin="10dp"
                 android:padding="8dp"
                 android:gravity="center_horizontal" />
@@ -89,14 +89,14 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/remove_icon" />
+                    android:src="@drawable/icon_remove" />
 
                 <TextView android:id="@+id/tvCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="19sp"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/inter_bold"
+                    android:fontFamily="@font/fira_bold"
                     android:layout_marginStart="12dp"
                     android:layout_marginEnd="12dp"
                     android:text="1"
@@ -107,7 +107,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/add_icon" />
+                    android:src="@drawable/icon_add" />
 
             </LinearLayout>
 

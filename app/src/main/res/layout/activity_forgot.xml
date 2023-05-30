@@ -6,6 +6,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".ForgotActivity">
 
     <LinearLayout
@@ -18,13 +19,13 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            app:srcCompat="@drawable/logo">
+            app:srcCompat="@drawable/app_logo">
         </ImageView>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/play_bold"
             android:textColor="@color/maroon"
             android:textSize="20sp"
             android:textColorHighlight="@color/light_yellow"
@@ -36,10 +37,11 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_marginTop="15dp"
-            android:background="@drawable/edit_text"
-            android:drawableLeft="@drawable/baseline_email_24"
+            android:background="@drawable/bg_edit_text"
+            android:drawableLeft="@drawable/ic_email"
             android:drawablePadding="15dp"
-            android:fontFamily="@font/inter_medium"
+            android:fontFamily="@font/fira"
+            android:textColor="@color/maroon"
             android:hint="Email"
             android:textColorHint="@color/yellow"
             android:inputType="textEmailAddress"
@@ -51,28 +53,25 @@
             android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/main_button"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_main"
             android:baselineAligned="false"
             android:clickable="true"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/play_bold"
             android:text="Sent Reset Request"
-            android:textSize="16sp" />
-
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/backLoginText"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/play_bold"
             android:textColor="@color/maroon"
-            android:layout_marginTop="360dp"
+            android:layout_marginTop="200dp"
             android:textSize="20sp"
             android:gravity="center"
             android:clickable="true"
             android:text="Back to Login" />
-
-
     </LinearLayout>
 
 </ScrollView>

@@ -14,7 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ousl.transgas.adapters.PlaceYourOrderAdapter;
 import com.ousl.transgas.model.GasModel;
 import com.ousl.transgas.model.Menu;

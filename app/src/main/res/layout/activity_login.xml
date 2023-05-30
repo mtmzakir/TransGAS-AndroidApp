@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,18 +17,18 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            app:srcCompat="@drawable/logo" />
+            android:layout_height="120dp"
+            app:srcCompat="@drawable/app_logo" />
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:fontFamily="@font/play_bold"
             android:text="Welcome,"
             android:textColor="@color/maroon"
             android:textSize="32sp" />
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:fontFamily="@font/play"
             android:text="Login to Get Started"
             android:textColor="@color/maroon"
@@ -39,8 +39,8 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_marginTop="15dp"
-            android:background="@drawable/edit_text"
-            android:drawableLeft="@drawable/baseline_email_24"
+            android:background="@drawable/bg_edit_text"
+            android:drawableLeft="@drawable/ic_email"
             android:drawablePadding="15dp"
             android:fontFamily="@font/fira"
             android:textColor="@color/maroon"
@@ -54,8 +54,8 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_marginTop="15dp"
-            android:background="@drawable/edit_text"
-            android:drawableLeft="@drawable/baseline_lock_24"
+            android:background="@drawable/bg_edit_text"
+            android:drawableLeft="@drawable/ic_password"
             android:drawablePadding="15dp"
             android:fontFamily="@font/fira"
             android:textColor="@color/maroon"
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:background="@drawable/main_button"
+            android:background="@drawable/button_main"
             android:baselineAligned="false"
             android:fontFamily="@font/play_bold"
             android:text="Login"
@@ -92,7 +92,7 @@
             android:layout_height="fill_parent"
             android:fontFamily="@font/play"
             android:gravity="center"
-            android:paddingTop="20dp"
+            android:paddingTop="28dp"
             android:text="or continue with"
             android:textColor="@color/black"
             android:textSize="16sp" />
@@ -145,4 +145,4 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
     </LinearLayout>
-</RelativeLayout>
+</ScrollView>

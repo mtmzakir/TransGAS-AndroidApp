@@ -26,11 +26,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:text="Checkout"
         android:gravity="center"
-        android:fontFamily="@font/inter_bold"
+        android:fontFamily="@font/play_bold"
         android:textSize="24sp"
         android:textColor="@color/white"
         android:padding="10dp"
         android:layout_margin="10dp"
-        android:background="@drawable/main_button" />
+        android:background="@drawable/button_main" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

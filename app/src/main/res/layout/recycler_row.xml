@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="22sp"
-                android:fontFamily="@font/inter_bold"
+                android:fontFamily="@font/fira_bold"
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp" />
@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:fontFamily="@font/inter_medium"
+                android:fontFamily="@font/fira_medium"
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp" />
@@ -60,7 +60,7 @@
                 android:layout_width="20dp"
                 android:layout_marginStart="10dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/delivery_dining_24"/>
+                android:background="@drawable/icon_delivery"/>
 
             <TextView
                 android:id="@+id/gasDeliveryCharge"
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="10dp"
-                android:fontFamily="@font/inter_medium"
+                android:fontFamily="@font/fira_medium"
                 android:textColor="@color/yellow"
                 android:textSize="12sp" />
         </LinearLayout>

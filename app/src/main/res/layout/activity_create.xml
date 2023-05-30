@@ -4,27 +4,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".CreateActivity">
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="20dp">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            app:srcCompat="@drawable/logo">
+            android:layout_height="120dp"
+            app:srcCompat="@drawable/app_logo">
         </ImageView>
 
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/play_bold"
             android:textColor="@color/maroon"
             android:textSize="20sp"
             android:textColorHighlight="@color/light_yellow"
@@ -33,12 +34,13 @@
         <EditText
             android:id="@+id/name"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/edit_text"
-            android:drawableLeft="@drawable/baseline_person_24"
+            android:background="@drawable/bg_edit_text"
+            android:drawableLeft="@drawable/ic_person"
             android:drawablePadding="15dp"
-            android:fontFamily="@font/inter_medium"
+            android:fontFamily="@font/fira"
+            android:textColor="@color/maroon"
             android:hint="Name"
             android:textColorHint="@color/yellow"
             android:inputType="text"
@@ -47,12 +49,13 @@
         <EditText
             android:id="@+id/email"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/edit_text"
-            android:drawableLeft="@drawable/baseline_email_24"
+            android:background="@drawable/bg_edit_text"
+            android:drawableLeft="@drawable/ic_email"
             android:drawablePadding="15dp"
-            android:fontFamily="@font/inter_medium"
+            android:fontFamily="@font/fira"
+            android:textColor="@color/maroon"
             android:hint="Email"
             android:textColorHint="@color/yellow"
             android:inputType="textEmailAddress"
@@ -61,12 +64,13 @@
         <EditText
             android:id="@+id/address"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/edit_text"
-            android:drawableLeft="@drawable/baseline_location_on_24"
+            android:background="@drawable/bg_edit_text"
+            android:drawableLeft="@drawable/ic_address"
             android:drawablePadding="15dp"
-            android:fontFamily="@font/inter_medium"
+            android:fontFamily="@font/fira"
+            android:textColor="@color/maroon"
             android:hint="Address"
             android:textColorHint="@color/yellow"
             android:inputType="textPostalAddress"
@@ -75,12 +79,13 @@
         <EditText
             android:id="@+id/mobileNumber"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/edit_text"
-            android:drawableLeft="@drawable/baseline_phone_android_24"
+            android:background="@drawable/bg_edit_text"
+            android:drawableLeft="@drawable/ic_phone"
             android:drawablePadding="15dp"
-            android:fontFamily="@font/inter_medium"
+            android:fontFamily="@font/fira"
+            android:textColor="@color/maroon"
             android:hint="Mobile Number"
             android:textColorHint="@color/yellow"
             android:inputType="phone"
@@ -90,14 +95,31 @@
         <EditText
             android:id="@+id/password"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/edit_text"
-            android:drawableLeft="@drawable/baseline_lock_24"
+            android:background="@drawable/bg_edit_text"
+            android:drawableLeft="@drawable/ic_password"
             android:drawablePadding="15dp"
             android:textColorHint="@color/yellow"
-            android:fontFamily="@font/inter_medium"
+            android:fontFamily="@font/fira"
+            android:textColor="@color/maroon"
             android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/repassword"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_edit_text"
+            android:drawableLeft="@drawable/ic_password"
+            android:drawablePadding="15dp"
+            android:textColorHint="@color/yellow"
+            android:fontFamily="@font/fira"
+            android:textColor="@color/maroon"
+            android:hint="Confirm Password"
             android:inputType="textPassword"
             android:padding="10dp"
             android:textSize="20sp" />
@@ -107,33 +129,33 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:background="@drawable/main_button"
+            android:background="@drawable/button_main"
             android:baselineAligned="false"
             android:layout_gravity="center"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/play_bold"
             android:text="Create Now"
             android:textSize="24sp" />
 
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:fontFamily="@font/inter_bold"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/play"
             android:gravity="center"
-            android:paddingTop="20dp"
-            android:text="create Account with Social Profiles"
+            android:paddingTop="28dp"
+            android:text="Create Account with Social Profiles"
             android:textColor="@color/black"
             android:textSize="16sp"/>
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/google_Button"
                 android:layout_width="80dp"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:background="@color/white"
                 android:src="@drawable/google_icon" />
@@ -141,7 +163,7 @@
             <ImageButton
                 android:id="@+id/facebook_Button"
                 android:layout_width="80dp"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_toRightOf="@+id/google_Button"
                 android:background="@color/white"
@@ -150,8 +172,8 @@
 
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:fontFamily="@font/inter_bold"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/play"
             android:gravity="center"
             android:paddingTop="5dp"
             android:text="Already Have an Account?"
@@ -161,13 +183,13 @@
         <TextView
             android:id="@+id/loginText"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:fontFamily="@font/inter_bold"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/play_bold"
             android:textColor="@color/maroon"
             android:textSize="20sp"
             android:gravity="center"
             android:clickable="true"
-            android:text="Login" />
+            android:text="Login Now" />
 
 
     </LinearLayout>

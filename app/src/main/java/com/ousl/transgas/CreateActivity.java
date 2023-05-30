@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class CreateActivity extends AppCompatActivity {
     Button createButton;
     ImageButton googleButton, facebookButton;
-    EditText name, email , address , mobileNumber, password;
+    EditText name, email , address , mobileNumber, password, repassword;
     TextView loginTextButton;
     DBHelper DB;
 
@@ -29,6 +29,7 @@ public class CreateActivity extends AppCompatActivity {
         address = (EditText) findViewById(R.id.address);
         mobileNumber = (EditText) findViewById(R.id.mobileNumber);
         password = (EditText) findViewById(R.id.password);
+        repassword = (EditText) findViewById(R.id.repassword);
         createButton = findViewById(R.id.createButton);
         loginTextButton = findViewById(R.id.loginText);
         googleButton = findViewById(R.id.google_Button);
@@ -42,25 +43,32 @@ public class CreateActivity extends AppCompatActivity {
                 String addresses = address.getText().toString();
                 String mobileNumbers = mobileNumber.getText().toString();
                 String passwords = password.getText().toString();
+                String repasswords = repassword.getText().toString();
 
-                if (names.equals("") || emails.equals("") || addresses.equals("") || mobileNumbers.equals("") || passwords.equals(""))
-                    Toast.makeText(CreateActivity.this, "Fields Cannot Be Empty ❗", Toast.LENGTH_SHORT).show();
+                if (names.equals("") || emails.equals("") || addresses.equals("") || mobileNumbers.equals("") || passwords.equals("")|| repasswords.equals(""))
+                    Toast.makeText(CreateActivity.this, "❗Enter All Fields", Toast.LENGTH_SHORT).show();
                 else {
+                    if (passwords.equals(repasswords)) {
                     Boolean checkemail = DB.checkemail(emails);
                     if (checkemail==false) {
                         Boolean insert = DB.insertData(names,emails,addresses,mobileNumbers,passwords);
                         if (insert==true) {
-                            Toast.makeText(CreateActivity.this, "Account Create Successful \uD83D\uDE0A", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CreateActivity.this, "Account Create Successful", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(CreateActivity.this,LoginActivity.class);
                             startActivity(intent);
                         } else {
-                            Toast.makeText(CreateActivity.this, "Registration Failed ⚠", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CreateActivity.this, "⚠ Registration Failed", Toast.LENGTH_SHORT).show();
                         }
                     }
-                    else Toast.makeText(CreateActivity.this, "User Already Exist ❗", Toast.LENGTH_SHORT).show();
+                    else Toast.makeText(CreateActivity.this, "❗User Already Exist", Toast.LENGTH_SHORT).show();
+                } else {
+                        Toast.makeText(CreateActivity.this, "⚠ Password Not Match", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
+
+
 
         loginTextButton.setOnClickListener(new View.OnClickListener() {
             @Override

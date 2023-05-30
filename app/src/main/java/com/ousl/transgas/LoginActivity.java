@@ -26,13 +26,15 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         loginButton = findViewById(R.id.loginButton);
-        email = (EditText) findViewById(R.id.email1);
-        password = (EditText) findViewById(R.id.password1);
+        email = (EditText) findViewById(R.id.email);
+        password = (EditText) findViewById(R.id.password);
         createNewAccountTextButton = findViewById(R.id.createNewAccountText);
         forgotPasswordTextButton = findViewById(R.id.forgotPasswordText);
         googleButton = findViewById(R.id.google_Button);
         facebookButton = findViewById(R.id.facebook_Button);
         DB = new DBHelper(this);
+
+        //loginButtonFunction
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,15 +42,15 @@ public class LoginActivity extends AppCompatActivity {
                 String passwords = password.getText().toString();
 
                 if (emails.equals("") || passwords.equals(""))
-                    Toast.makeText(LoginActivity.this, "Fields Cannot Be Empty ❗", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "❗Enter All Fields", Toast.LENGTH_SHORT).show();
                 else {
                     Boolean checkemailpasswords = DB.checkemailpasswords(emails,passwords);
                     if (checkemailpasswords==true) {
-                        Toast.makeText(LoginActivity.this, "Login Successful \uD83D\uDE0A", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
                         startActivity(intent);
                     } else {
-                        Toast.makeText(LoginActivity.this, "Invalid Credentials ⚠", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "⚠ Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -57,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         createNewAccountTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                opencreateNewAccountPage();
+                openCreateNewAccountPage();
             }
         });
         forgotPasswordTextButton.setOnClickListener(new View.OnClickListener() {
@@ -81,10 +83,14 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-    public void opencreateNewAccountPage() {
+
+    //openCreateNewAccountPage
+    public void openCreateNewAccountPage() {
         Intent intent = new Intent(this, CreateActivity.class);
         startActivity(intent);
     }
+
+    //openForgotPasswordPage
     public void openforgotPasswordPage() {
         Intent intent = new Intent(this, ForgotActivity.class);
         startActivity(intent);

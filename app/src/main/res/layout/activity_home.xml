@@ -18,14 +18,14 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="42dp"
         android:layout_marginEnd="42dp"
-        android:background="@drawable/edit_text"
+        android:background="@drawable/bg_edit_text"
         android:foregroundGravity="center" />
 
     <ImageButton
         android:layout_marginRight="2dp"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_notifications_24"
+        android:src="@drawable/icon_notifications"
         android:background="@color/white"
         android:layout_alignParentRight="true"/>
 
@@ -35,7 +35,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@color/white"
-        android:src="@drawable/baseline_my_location_24"/>
+        android:src="@drawable/icon_location"/>
 
     <TextView
         android:id="@+id/address"
@@ -44,7 +44,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="40dp"
-        android:fontFamily="@font/inter_medium"
+        android:fontFamily="@font/fira"
         android:textColor="@color/black"
         android:textSize="13sp"
         android:gravity="center"
@@ -70,7 +70,7 @@
         android:layout_width="500dp"
         android:layout_height="40dp"
         android:layout_below="@+id/viewPager"
-        android:background="@drawable/edit_text"
+        android:background="@drawable/bg_edit_text"
         android:layout_marginStart="15dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="15dp"
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/search"
-        android:fontFamily="@font/inter_bold"
+        android:fontFamily="@font/play_bold"
         android:textColor="@color/maroon"
         android:textSize="18sp"
         android:layout_marginLeft="15dp"
@@ -96,7 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/search"
-        android:fontFamily="@font/inter_bold"
+        android:fontFamily="@font/play_bold"
         android:textColor="@color/yellow"
         android:textSize="14sp"
         android:clickable="true"
@@ -121,7 +121,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:background="@color/white"
-            android:src="@drawable/litrogas" />
+            android:src="@drawable/m_litrogas" />
 
         <ImageButton
             android:id="@+id/laugfs_gas"
@@ -130,7 +130,7 @@
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/litro_gas"
             android:background="@color/white"
-            android:src="@drawable/laugfsgas" />
+            android:src="@drawable/m_laugfsgas" />
 
         <ImageButton
             android:id="@+id/empty_gas"
@@ -139,7 +139,7 @@
             android:layout_toRightOf="@+id/laugfs_gas"
             android:background="@color/white"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/emptygas" />
+            android:src="@drawable/m_emptygas" />
 
         <ImageButton
             android:id="@+id/access_gas"
@@ -148,7 +148,7 @@
             android:layout_toRightOf="@+id/empty_gas"
             android:background="@color/white"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/accessgas" />
+            android:src="@drawable/m_accessgas" />
 
     </RelativeLayout>
 
@@ -158,7 +158,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/list1"
-        android:fontFamily="@font/inter_bold"
+        android:fontFamily="@font/play_bold"
         android:textColor="@color/maroon"
         android:textSize="18sp"
         android:layout_marginLeft="15dp"
@@ -172,7 +172,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/list1"
-        android:fontFamily="@font/inter_bold"
+        android:fontFamily="@font/play_bold"
         android:textColor="@color/yellow"
         android:textSize="14sp"
         android:clickable="true"
