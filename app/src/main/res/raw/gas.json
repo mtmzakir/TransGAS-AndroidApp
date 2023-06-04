@@ -9,25 +9,25 @@
       {
         "name": "Litro 2.5kg",
         "price": 1000,
-        "rating": 4.5,
+        "rating": "★★★",
         "url": "https://i.ibb.co/9VfJZYj/litrogas.png"
       },
       {
         "name": "Litro 5kg",
         "price": 2000,
-        "rating": 4.5,
+        "rating": "★★★",
         "url": "https://i.ibb.co/9VfJZYj/litrogas.png"
       },
       {
         "name": "Litro 12.5kg",
         "price": 3000,
-        "rating": 4.6,
+        "rating": "★★★",
         "url": "https://i.ibb.co/9VfJZYj/litrogas.png"
       },
       {
         "name": "Litro 37.5kg",
         "price": 5000,
-        "rating": 4.2,
+        "rating": "★★★★★",
         "url": "https://i.ibb.co/9VfJZYj/litrogas.png"
       }
     ]

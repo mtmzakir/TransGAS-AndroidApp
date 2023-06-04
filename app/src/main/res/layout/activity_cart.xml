@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".CartActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,16 +12,15 @@
         android:layout_height="match_parent">
 
 
-        <TextView android:id="@+id/tvTotalItems"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_margin="10dp"
-            android:text="Total items in cart"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/tvTotalItems"
+            android:layout_width="match_parent"
+            android:text="Items in Cart"
+            android:textColor="@color/maroon"
+            android:fontFamily="@font/play_bold"
+            android:textSize="28sp"
+            android:gravity="center"
+            android:layout_height="60dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cartItemsRecyclerView"
@@ -36,60 +36,72 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cartItemsRecyclerView"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/maroon"
+            android:fontFamily="@font/fira_bold"
             android:text="Sub total"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textSize="18sp" />
 
         <TextView android:id="@+id/tvSubtotalAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cartItemsRecyclerView"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:text="Rs.0.0"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/maroon"
+            android:fontFamily="@font/fira_bold"
+            android:textSize="18sp" />
 
         <TextView android:id="@+id/tvDeliveryCharge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvSubtotal"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/maroon"
+            android:fontFamily="@font/fira_bold"
             android:text="Delivery Charge"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textSize="18sp" />
 
         <TextView android:id="@+id/tvDeliveryChargeAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvSubtotal"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:text="Rs.0.0"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/maroon"
+            android:fontFamily="@font/fira_bold"
+            android:textSize="18sp" />
 
         <TextView android:id="@+id/tvTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDeliveryCharge"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:text="Total"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/maroon"
+            android:fontFamily="@font/fira_bold"/>
 
         <TextView android:id="@+id/tvTotalAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDeliveryCharge"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:text="Rs.0.0"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/maroon"
+            android:fontFamily="@font/fira_bold"/>
 
         <TextView android:id="@+id/buttonPlaceYourOrder"
             android:layout_width="match_parent"
@@ -97,13 +109,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTotal"
-            android:text="Place your order"
-            android:textSize="18sp"
+            android:text="Place Order Now"
             android:textColor="@color/white"
-            android:textStyle="bold"
+            android:fontFamily="@font/play_bold"
+            android:textSize="24sp"
             android:gravity="center"
             android:padding="10dp"
-            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/button_main"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>

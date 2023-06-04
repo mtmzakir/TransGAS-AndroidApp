@@ -43,7 +43,7 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MyView
     public void onBindViewHolder(@NonNull MenuListAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.menuName.setText(menuList.get(position).getName());
         holder.menuPrice.setText("Rs." + menuList.get(position).getPrice() + "0");
-        holder.menuRating.setText("★" + menuList.get(position).getRating());
+        holder.menuRating.setText("" + menuList.get(position).getRating());
 
         holder.addToCartButton.setOnClickListener(new View.OnClickListener() {
             @Override

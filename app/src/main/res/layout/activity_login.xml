@@ -15,7 +15,7 @@
         android:orientation="vertical"
         android:padding="20dp">
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/logo"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             app:srcCompat="@drawable/app_logo" />
@@ -35,7 +35,7 @@
             android:textColorHighlight="@color/light_yellow"
             android:textSize="20sp" />
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/emailEditText"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_marginTop="15dp"
@@ -50,7 +50,7 @@
             android:textColorHint="@color/yellow"
             android:textSize="20sp" />
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/passwordEditText"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_marginTop="15dp"

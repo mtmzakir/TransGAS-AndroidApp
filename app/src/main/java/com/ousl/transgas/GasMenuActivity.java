@@ -28,6 +28,7 @@ public class GasMenuActivity extends AppCompatActivity implements MenuListAdapte
     List<Menu> itemsInCartList;
     int totalItemInCart = 0;
     TextView buttonCheckout;
+    String currentUserDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,29 +36,33 @@ public class GasMenuActivity extends AppCompatActivity implements MenuListAdapte
         setContentView(R.layout.activity_gas_menu);
 //      getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.purple_500)));
 
+        //Receive Pushed Database Data
+        currentUserDetails=getIntent().getStringExtra("current_user_data");
+
+        //Parse JSON Data
         GasModel gasModel = getIntent().getParcelableExtra("GasModel");
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(gasModel.getName() + " Menu");
         actionBar.setSubtitle("Delivery " + gasModel.getAddress());
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-
         menuList = gasModel.getMenus();
         initRecyclerView();
 
-
+        //Function Checkout Button
         buttonCheckout = findViewById(R.id.buttonCheckout);
         buttonCheckout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (itemsInCartList != null && itemsInCartList.size() <= 0) {
-                    Toast.makeText(GasMenuActivity.this, "Please add some items in cart.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(GasMenuActivity.this, "Please Add Some Items", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 gasModel.setMenus(itemsInCartList);
-                Intent i = new Intent(GasMenuActivity.this, CartActivity.class);
-                i.putExtra("GasModel", gasModel);
-                startActivityForResult(i, 1000);
+                Intent intent= new Intent(GasMenuActivity.this, CartActivity.class);
+                intent.putExtra("GasModel", gasModel);
+                intent.putExtra("current_user_data",currentUserDetails);  //UserDetails Push
+                startActivityForResult(intent, 1000);
             }
         });
     }
@@ -69,6 +74,7 @@ public class GasMenuActivity extends AppCompatActivity implements MenuListAdapte
         recyclerView.setAdapter(menuListAdapter);
     }
 
+    //Function for + Button
     @Override
     public void onAddToCartClick(Menu menu) {
         if (itemsInCartList == null) {
@@ -80,9 +86,10 @@ public class GasMenuActivity extends AppCompatActivity implements MenuListAdapte
         for (Menu m : itemsInCartList) {
             totalItemInCart = totalItemInCart + m.getTotalInCart();
         }
-        buttonCheckout.setText("Checkout (" + totalItemInCart + ") items");
+        buttonCheckout.setText("Checkout (" + totalItemInCart + ") Items");
     }
 
+    //Function for Button Update
     @Override
     public void onUpdateCartClick(Menu menu) {
         if (itemsInCartList.contains(menu)) {
@@ -95,10 +102,11 @@ public class GasMenuActivity extends AppCompatActivity implements MenuListAdapte
             for (Menu m : itemsInCartList) {
                 totalItemInCart = totalItemInCart + m.getTotalInCart();
             }
-            buttonCheckout.setText("Checkout (" + totalItemInCart + ") items");
+            buttonCheckout.setText("Checkout (" + totalItemInCart + ") Items");
         }
     }
 
+    //Function for - Button
     @Override
     public void onRemoveFromCartClick(Menu menu) {
         if (itemsInCartList.contains(menu)) {
@@ -108,7 +116,7 @@ public class GasMenuActivity extends AppCompatActivity implements MenuListAdapte
             for (Menu m : itemsInCartList) {
                 totalItemInCart = totalItemInCart + m.getTotalInCart();
             }
-            buttonCheckout.setText("Checkout (" + totalItemInCart + ") items");
+            buttonCheckout.setText("Checkout (" + totalItemInCart + ") Items");
         }
     }
 

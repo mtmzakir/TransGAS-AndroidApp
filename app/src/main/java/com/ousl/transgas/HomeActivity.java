@@ -30,6 +30,9 @@ import android.widget.Toast;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.ousl.transgas.model.GasModel;
+import com.ousl.transgas.model.UserModel;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,9 +41,10 @@ import java.util.Locale;
 public class HomeActivity extends AppCompatActivity{
 
     FusedLocationProviderClient fusedLocationProviderClient;
-    TextView address, viewCategory;
-    ImageButton getLocation;
+    TextView address, viewCategory,userName;
+    ImageButton getLocation, notification;
     ViewPager2 viewPager2;
+    String currentUserDetails;
     private final static int REQUEST_CODE = 100;
     private Handler slideHandler = new Handler();
 
@@ -51,7 +55,22 @@ public class HomeActivity extends AppCompatActivity{
         setContentView(R.layout.activity_home);
         getSupportActionBar().hide();
 
-        //Slider
+        //Parse Database Data
+        userName = findViewById(R.id.userNameText);
+
+        //Function Notification Button
+        notification =  findViewById(R.id.notificationButton);
+        notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNotifications();
+            }
+        });
+
+        //Receive Pushed Database Data
+        currentUserDetails=getIntent().getStringExtra("current_user_data");
+
+        //Slider Images
         viewPager2 = findViewById(R.id.viewPager);
 
         List<SlideItem> sliderItem = new ArrayList<>();
@@ -99,7 +118,7 @@ public class HomeActivity extends AppCompatActivity{
 
 
         //Location
-        address = findViewById(R.id.address);
+        address = findViewById(R.id.currentLocation);
         getLocation = findViewById(R.id.getLocation);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         getLocation.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +132,7 @@ public class HomeActivity extends AppCompatActivity{
         //Navigation Bottom
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.home);
-//        bottomNavigationView.setLabelVisibilityMode(NavigationBarView.LABEL_VISIBILITY_UNLABELED);
+        //bottomNavigationView.setLabelVisibilityMode(NavigationBarView.LABEL_VISIBILITY_UNLABELED);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -123,23 +142,37 @@ public class HomeActivity extends AppCompatActivity{
                         return true;
 
                     case R.id.categories:
-                        startActivity(new Intent(getApplicationContext(),CategoriesActivity.class));
+                        Intent intent = new Intent(getApplicationContext(),CategoriesActivity.class);
+                        intent.putExtra("current_user_data",currentUserDetails);  //User Details Push
+                        startActivity(intent);
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.orders:
-                        startActivity(new Intent(getApplicationContext(),OrdersActivity.class));
+                        Intent intent2 = new Intent(getApplicationContext(),OrdersActivity.class);
+                        intent2.putExtra("current_user_data",currentUserDetails);  //User Details Push
+                        startActivity(intent2);
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        Intent intent3 = new Intent(getApplicationContext(),ProfileActivity.class);
+                        intent3.putExtra("current_user_data",currentUserDetails);  //User Details Push
+                        startActivity(intent3);
                         overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
             }
         });
+
+        getUserDetails();
+    }
+
+    //Function Start Notification Activity
+    private void openNotifications(){
+        Intent intent = new Intent(this, NotificationsActivity.class);
+        startActivity(intent);
     }
 
     //Auto Slide
@@ -218,14 +251,26 @@ public class HomeActivity extends AppCompatActivity{
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                 getLastLocation();
             }else {
-                Toast.makeText(HomeActivity.this,"Please provide the required permission",Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeActivity.this,"Please Provide the Required Permission",Toast.LENGTH_SHORT).show();
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
+
+    //Open Category Page
     public void openCategoryPage() {
-        startActivity(new Intent(getApplicationContext(),CategoriesActivity.class));
+        Intent intent = new Intent(getApplicationContext(),CategoriesActivity.class);
+        intent.putExtra("current_user_data",currentUserDetails);  //User Details Push
+        startActivity(intent);
         overridePendingTransition(0,0);
+    }
+
+    //Function Get Current User Details
+    public void getUserDetails(){
+        DBHelper dbHelper = new DBHelper(this);
+        ArrayList<UserModel> aList = dbHelper.getCurrentUserDetails(currentUserDetails);
+        UserModel userModel = aList.get(0);
+        userName.setText("Hello, "+userModel.getUsed_name()+" \uD83D\uDE0A");
     }
 }
 

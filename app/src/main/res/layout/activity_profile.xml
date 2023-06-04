@@ -6,21 +6,132 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".ProfileActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/profile"
         android:text="Profile"
+        android:textColor="@color/maroon"
         android:fontFamily="@font/play_bold"
-        android:textSize="50dp"
-        android:layout_centerInParent="true"/>
+        android:textSize="28sp"
+        android:gravity="center"
+        android:layout_height="60dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/userImageImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/icon_person_pin" />
+
+        <TextView
+            android:id="@+id/userNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="24dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/fira_bold"
+            android:textColor="@color/maroon" />
+        <TextView
+            android:id="@+id/userEmailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="18dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/fira_medium"
+            android:textColor="@color/maroon" />
+
+        <TextView
+            android:id="@+id/userAddressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="16dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/fira_medium"
+            android:textColor="@color/maroon" />
+
+        <TextView
+            android:id="@+id/userPhoneText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="16dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/fira_medium"
+            android:textColor="@color/maroon" />
+
+
+        <TextView
+            android:id="@+id/editProfileButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:text="Edit Profile"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_edit_text"
+            android:backgroundTint="@color/yellow"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:fontFamily="@font/play_bold"
+            android:textColor="@color/maroon"
+            android:clickable="true"/>
+
+        <TextView
+            android:id="@+id/changePasswordButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:text="Change Password"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_edit_text"
+            android:textSize="20dp"
+            android:backgroundTint="@color/yellow"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:fontFamily="@font/play_bold"
+            android:textColor="@color/maroon"
+            android:clickable="true"/>
+
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="240dp"
+            android:layout_height="54dp"
+            android:background="@drawable/bg_edit_text"
+            android:text="LOGOUT"
+            android:fontFamily="@font/play_bold"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </LinearLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bottom_navigator"
-        app:itemBackground="@color/light_yellow"
+        app:itemBackground="@color/maroon"
         app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu"

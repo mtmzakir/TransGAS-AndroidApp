@@ -22,6 +22,7 @@ public class CartActivity extends AppCompatActivity {
     RecyclerView cartItemsRecyclerView;
     TextView tvSubtotalAmount, tvDeliveryChargeAmount, tvDeliveryCharge, tvTotalAmount, buttonPlaceYourOrder;
     PlaceYourOrderAdapter placeYourOrderAdapter;
+    String currentUserDetails;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -29,6 +30,11 @@ public class CartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
         getSupportActionBar().hide();
+
+        //Receive Pushed Database Data
+        currentUserDetails=getIntent().getStringExtra("current_user_data");
+
+        //Parse JSON Data
         GasModel gasModel = getIntent().getParcelableExtra("GasModel");
 
         tvSubtotalAmount = findViewById(R.id.tvSubtotalAmount);
@@ -36,9 +42,9 @@ public class CartActivity extends AppCompatActivity {
         tvDeliveryCharge = findViewById(R.id.tvDeliveryCharge);
         tvTotalAmount = findViewById(R.id.tvTotalAmount);
         buttonPlaceYourOrder = findViewById(R.id.buttonPlaceYourOrder);
-
         cartItemsRecyclerView = findViewById(R.id.cartItemsRecyclerView);
 
+        //Function Place Order Button
         buttonPlaceYourOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +56,7 @@ public class CartActivity extends AppCompatActivity {
         calculateTotalAmount(gasModel);
     }
 
+    //Function Calculate Amount
     private void calculateTotalAmount(GasModel gasModel) {
         float subTotalAmount = 0f;
 
@@ -63,10 +70,12 @@ public class CartActivity extends AppCompatActivity {
         tvTotalAmount.setText("Rs."+String.format("%.2f", subTotalAmount));
     }
 
+    //Function Place Order Click
     private void onPlaceOrderButtonClick(GasModel gasModel) {
         //start success activity..
         Intent i = new Intent(CartActivity.this, SetDetailsActivity.class);
         i.putExtra("GasModel", gasModel);
+        i.putExtra("current_user_data",currentUserDetails); //User Details Push
         startActivityForResult(i, 1000);
     }
 
@@ -98,6 +107,7 @@ public class CartActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //Function Back Press
     @Override
     public void onBackPressed() {
         super.onBackPressed();

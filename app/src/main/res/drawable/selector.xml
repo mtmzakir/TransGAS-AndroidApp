@@ -6,6 +6,6 @@
         android:color="@color/yellow"/>
     <item
         android:state_selected="false"
-        android:color="@color/maroon"
-        android:drawable="@color/maroon"/>
+        android:color="@color/light_yellow"
+        android:drawable="@color/light_yellow"/>
 </selector>

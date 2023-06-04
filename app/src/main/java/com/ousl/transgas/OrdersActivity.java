@@ -6,21 +6,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class OrdersActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+    String currentUserDetails;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orders);
+        getSupportActionBar().hide();
 
+        //Receive Pushed Database Data
+        currentUserDetails=getIntent().getStringExtra("current_user_data");
+
+        //Navigation Bottom
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.orders);
-//        bottomNavigationView.setLabelVisibilityMode(NavigationBarView.LABEL_VISIBILITY_UNLABELED);
-
+        //bottomNavigationView.setLabelVisibilityMode(NavigationBarView.LABEL_VISIBILITY_UNLABELED);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -30,17 +37,23 @@ public class OrdersActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                        Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+                        intent.putExtra("current_user_data",currentUserDetails);  //User Details Push
+                        startActivity(intent);
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.categories:
-                        startActivity(new Intent(getApplicationContext(),CategoriesActivity.class));
+                        Intent intent2 = new Intent(getApplicationContext(),CategoriesActivity.class);
+                        intent2.putExtra("current_user_data",currentUserDetails);  //User Details Push
+                        startActivity(intent2);
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.profile:
+                        Intent intent3 = new Intent(getApplicationContext(),ProfileActivity.class);
+                        intent3.putExtra("current_user_data",currentUserDetails);  //User Details Push
+                        startActivity(intent3);
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -52,7 +65,9 @@ public class OrdersActivity extends AppCompatActivity {
     //Back Press Home
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+        Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+        intent.putExtra("current_user_data",currentUserDetails);  //User Details Push
+        startActivity(intent);
         overridePendingTransition(0,0);
     }
 }

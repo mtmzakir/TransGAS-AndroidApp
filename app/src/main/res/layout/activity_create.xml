@@ -16,7 +16,7 @@
         android:padding="20dp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/logo"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             app:srcCompat="@drawable/app_logo">
@@ -32,7 +32,7 @@
             android:text="Create New Account" />
 
         <EditText
-            android:id="@+id/name"
+            android:id="@+id/nameEditText"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -47,7 +47,7 @@
             android:padding="10dp"
             android:textSize="20sp" />
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/emailEditText"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -62,7 +62,7 @@
             android:padding="10dp"
             android:textSize="20sp" />
         <EditText
-            android:id="@+id/address"
+            android:id="@+id/addressEditText"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -77,7 +77,7 @@
             android:padding="10dp"
             android:textSize="20sp" />
         <EditText
-            android:id="@+id/mobileNumber"
+            android:id="@+id/mobileNumberEditText"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -93,7 +93,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/passwordEditText"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -109,7 +109,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/repassword"
+            android:id="@+id/rePasswordEditText"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

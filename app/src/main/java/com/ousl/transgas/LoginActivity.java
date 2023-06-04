@@ -26,42 +26,46 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         loginButton = findViewById(R.id.loginButton);
-        email = (EditText) findViewById(R.id.email);
-        password = (EditText) findViewById(R.id.password);
+        email = (EditText) findViewById(R.id.emailEditText);
+        password = (EditText) findViewById(R.id.passwordEditText);
         createNewAccountTextButton = findViewById(R.id.createNewAccountText);
         forgotPasswordTextButton = findViewById(R.id.forgotPasswordText);
         googleButton = findViewById(R.id.google_Button);
         facebookButton = findViewById(R.id.facebook_Button);
         DB = new DBHelper(this);
 
-        //loginButtonFunction
+        //Function Login Button
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String emails = email.getText().toString();
-                String passwords = password.getText().toString();
+                String usedEmail = email.getText().toString();
+                String usedPassword = password.getText().toString();
 
-                if (emails.equals("") || passwords.equals(""))
-                    Toast.makeText(LoginActivity.this, "❗Enter All Fields", Toast.LENGTH_SHORT).show();
+                if (usedEmail.equals("") || usedPassword.equals(""))
+                    Toast.makeText(LoginActivity.this, "Enter All Fields", Toast.LENGTH_SHORT).show();
                 else {
-                    Boolean checkemailpasswords = DB.checkemailpasswords(emails,passwords);
-                    if (checkemailpasswords==true) {
+                    Boolean checkEmailPasswords = DB.checkEmailPassword(usedEmail, usedPassword);
+                    if (checkEmailPasswords == true) {
                         Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                        intent.putExtra("current_user_data",usedEmail);  //User Details Push
                         startActivity(intent);
                     } else {
-                        Toast.makeText(LoginActivity.this, "⚠ Invalid Credentials", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
 
+        //Function Start Create Activity
         createNewAccountTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openCreateNewAccountPage();
             }
         });
+
+        //Function Start Forgot Activity
         forgotPasswordTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,6 +73,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //Function Google and Facebook Buttons
         googleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,17 +89,19 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    //openCreateNewAccountPage
+    //Open Create New Account Page
     public void openCreateNewAccountPage() {
         Intent intent = new Intent(this, CreateActivity.class);
         startActivity(intent);
     }
 
-    //openForgotPasswordPage
+    //Open Forgot Password Page
     public void openforgotPasswordPage() {
         Intent intent = new Intent(this, ForgotActivity.class);
         startActivity(intent);
     }
+
+    //Open Toast Not Available
     public void openToastNotAvailable() {
         Toast.makeText(this, "Feature Unavailable \uD83D\uDE41", Toast.LENGTH_SHORT).show();
     }

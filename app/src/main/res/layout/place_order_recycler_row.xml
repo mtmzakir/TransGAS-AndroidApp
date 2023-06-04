@@ -3,21 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D9D9D9"
         android:orientation="horizontal"
         android:layout_gravity="center_vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="10dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView android:id="@+id/thumbImage"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="80dp"
             android:layout_gravity="center_vertical"
             android:layout_margin="10dp" />
@@ -31,19 +31,18 @@
             <TextView android:id="@+id/menuName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:fontFamily="@font/fira_medium"
+                android:textColor="@color/maroon"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="05dp" />
+                android:layout_marginEnd="10dp" />
 
             <TextView android:id="@+id/menuPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
+                android:fontFamily="@font/fira_medium"
+                android:textColor="@color/yellow"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp" />
 
@@ -51,8 +50,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
+                android:fontFamily="@font/fira_medium"
+                android:textColor="@color/maroon"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp" />
         </LinearLayout>
