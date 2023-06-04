@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +28,7 @@ public class GasMenuActivity extends AppCompatActivity implements MenuListAdapte
     MenuListAdapter menuListAdapter;
     List<Menu> itemsInCartList;
     int totalItemInCart = 0;
-    TextView buttonCheckout;
+    Button buttonCheckout;
     String currentUserDetails;
 
     @Override

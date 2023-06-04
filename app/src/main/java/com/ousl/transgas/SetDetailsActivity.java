@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -17,7 +18,8 @@ import com.ousl.transgas.model.UserModel;
 import java.util.ArrayList;
 
 public class SetDetailsActivity extends AppCompatActivity {
-    TextView placeOrder,userId;
+    TextView userId;
+    Button placeOrder;
     EditText address;
     RadioGroup radioGroup;
     RadioButton radioButton;

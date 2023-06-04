@@ -42,25 +42,25 @@
       {
         "name": "Laugfs 2.5kg",
         "price": 1000,
-        "rating": 4.5,
+        "rating": "★★★",
         "url": "https://i.ibb.co/X3PpZWZ/laugfsgas.png"
       },
       {
         "name": "Laugfs 5kg",
         "price": 2000,
-        "rating": 4.5,
+        "rating": "★★★",
         "url": "https://i.ibb.co/X3PpZWZ/laugfsgas.png"
       },
       {
         "name": "Laugfs 12.5kg",
         "price": 3000,
-        "rating": 4.6,
+        "rating": "★★★",
         "url": "https://i.ibb.co/X3PpZWZ/laugfsgas.png"
       },
       {
         "name": "Laugfs 37.5kg",
         "price": 5000,
-        "rating": 4.2,
+        "rating": "★★★",
         "url": "https://i.ibb.co/X3PpZWZ/laugfsgas.png"
       }
     ]
@@ -75,25 +75,25 @@
       {
         "name": "2.5kg Cylinder",
         "price": 6000,
-        "rating": 4.5,
+        "rating": "★★★",
         "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
       },
       {
         "name": "5kg Cylinder",
         "price": 8000,
-        "rating": 4.5,
+        "rating": "★★★",
         "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
       },
       {
         "name": "12.5kg Cylinder",
         "price": 12000,
-        "rating": 4.6,
+        "rating": "★★★",
         "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
       },
       {
         "name": "37.5kg Cylinder",
         "price": 15000,
-        "rating": 4.2,
+        "rating": "★★★",
         "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
       }
     ]
@@ -108,25 +108,25 @@
       {
         "name": "2.5kg Cylinder",
         "price": 6000,
-        "rating": 4.5,
+        "rating": "★★★",
         "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
       },
       {
         "name": "5kg Cylinder",
         "price": 8000,
-        "rating": 4.5,
+        "rating": "★★★",
         "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
       },
       {
         "name": "12.5kg Cylinder",
         "price": 12000,
-        "rating": 4.6,
+        "rating": "★★★",
         "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
       },
       {
         "name": "37.5kg Cylinder",
         "price": 15000,
-        "rating": 4.2,
+        "rating": "★★★",
         "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
       }
     ]

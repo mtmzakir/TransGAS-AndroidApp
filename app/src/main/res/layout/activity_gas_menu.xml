@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:paddingBottom="70dp" />
 
-    <TextView
+    <Button
         android:id="@+id/buttonCheckout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

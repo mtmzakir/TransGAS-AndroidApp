@@ -103,13 +103,14 @@
             android:textColor="@color/maroon"
             android:fontFamily="@font/fira_bold"/>
 
-        <TextView android:id="@+id/buttonPlaceYourOrder"
+        <Button
+            android:id="@+id/buttonPlaceYourOrder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTotal"
-            android:text="Place Order Now"
+            android:text="Place Order"
             android:textColor="@color/white"
             android:fontFamily="@font/play_bold"
             android:textSize="24sp"
