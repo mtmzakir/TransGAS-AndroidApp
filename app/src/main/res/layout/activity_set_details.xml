@@ -1,9 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".SetDetailsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/details"
+        android:text="Delivery Details"
+        android:textColor="@color/maroon"
+        android:fontFamily="@font/play_bold"
+        android:textSize="28sp"
+        android:gravity="center"
+        android:layout_height="60dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tvLocation"
+        android:layout_below="@+id/details"
+        android:text="Select Delivery Location"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/fira"
+        android:textStyle="bold"
+        android:textColor="@color/maroon"
+        android:textSize="18sp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_height="28dp"/>
+
+    <FrameLayout
+        android:id="@+id/mapLayout"
+        android:layout_below="@+id/tvLocation"
+        android:layout_width="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_height="360dp">
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/EnterDetails"
+        android:text="More Details"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_below="@+id/mapLayout"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/fira"
+        android:textStyle="bold"
+        android:textColor="@color/maroon"
+        android:textSize="18sp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_height="28dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/userIdText"
+        android:text=""
+        android:layout_below="@+id/mapLayout"
+        android:textSize="0sp"
+        android:layout_height="0dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/userEmailText"
+        android:text=""
+        android:layout_below="@+id/mapLayout"
+        android:textSize="0sp"
+        android:layout_height="0dp"/>
+
+    <EditText
+        android:id="@+id/addressEditText"
+        android:layout_below="@+id/EnterDetails"
+        android:drawableLeft="@drawable/ic_address"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_edit_text"
+        android:drawablePadding="15dp"
+        android:fontFamily="@font/fira"
+        android:hint="Enter Delivery Address"
+        android:textColor="@color/maroon"
+        android:textColorHint="@color/yellow"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+        android:layout_below="@+id/addressEditText">
+        <RadioButton
+            android:id="@+id/codRButton"
+            android:onClick="payment"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:buttonTint="@color/yellow"
+            android:fontFamily="@font/fira"
+            android:text="Cash On Delivery"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/cdRButton"
+            android:onClick="payment"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:buttonTint="@color/yellow"
+            android:fontFamily="@font/fira"
+            android:text="Card Payment"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RadioGroup>
+    <TextView
+        android:id="@+id/placeOrderButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_main"
+        android:fontFamily="@font/play_bold"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Place Order Now"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</RelativeLayout>

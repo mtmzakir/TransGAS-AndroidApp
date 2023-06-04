@@ -19,6 +19,15 @@
         android:gravity="center"
         android:layout_height="60dp"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:text="No Orders Found"
+        android:textColor="@color/maroon"
+        android:fontFamily="@font/fira"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_height="match_parent"/>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".NotificationsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/notification"
+        android:text="Notifications"
+        android:textColor="@color/maroon"
+        android:fontFamily="@font/play_bold"
+        android:textSize="28sp"
+        android:gravity="center"
+        android:layout_height="60dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="No New Notifications"
+        android:textColor="@color/maroon"
+        android:fontFamily="@font/fira"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_height="match_parent"/>
+
+
+</RelativeLayout>
