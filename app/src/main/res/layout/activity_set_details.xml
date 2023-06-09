@@ -19,38 +19,13 @@
         android:gravity="center"
         android:layout_height="60dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/tvLocation"
-        android:layout_below="@+id/details"
-        android:text="Select Delivery Location"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
-        android:fontFamily="@font/fira"
-        android:textStyle="bold"
-        android:textColor="@color/maroon"
-        android:textSize="18sp"
-        android:gravity="center_horizontal|center_vertical"
-        android:layout_height="28dp"/>
-
-    <FrameLayout
-        android:id="@+id/mapLayout"
-        android:layout_below="@+id/tvLocation"
-        android:layout_width="match_parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:layout_height="360dp">
-    </FrameLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:id="@+id/EnterDetails"
-        android:text="More Details"
-        android:layout_marginTop="20dp"
+        android:text="Receiver Details"
         android:layout_marginEnd="20dp"
-        android:layout_below="@+id/mapLayout"
+        android:layout_below="@+id/details"
         android:layout_marginStart="20dp"
         android:fontFamily="@font/fira"
         android:textStyle="bold"
@@ -63,7 +38,7 @@
         android:layout_width="match_parent"
         android:id="@+id/userIdText"
         android:text=""
-        android:layout_below="@+id/mapLayout"
+        android:layout_below="@+id/details"
         android:textSize="0sp"
         android:layout_height="0dp"/>
 
@@ -71,19 +46,55 @@
         android:layout_width="match_parent"
         android:id="@+id/userEmailText"
         android:text=""
-        android:layout_below="@+id/mapLayout"
+        android:layout_below="@+id/details"
         android:textSize="0sp"
         android:layout_height="0dp"/>
 
     <EditText
-        android:id="@+id/addressEditText"
+        android:id="@+id/rNameEditText"
         android:layout_below="@+id/EnterDetails"
+        android:drawableLeft="@drawable/ic_person"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_edit_text"
+        android:drawablePadding="15dp"
+        android:fontFamily="@font/fira"
+        android:hint="Enter Receiver Name"
+        android:textColor="@color/maroon"
+        android:textColorHint="@color/yellow"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textSize="16sp" />
+    <EditText
+        android:id="@+id/rPhoneEditText"
+        android:layout_below="@+id/rNameEditText"
         android:drawableLeft="@drawable/ic_address"
         android:layout_width="fill_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_edit_text"
+        android:drawablePadding="15dp"
+        android:fontFamily="@font/fira"
+        android:hint="Enter Phone Number"
+        android:textColor="@color/maroon"
+        android:textColorHint="@color/yellow"
+        android:inputType="number"
+        android:padding="10dp"
+        android:textSize="16sp" />
+    <EditText
+        android:id="@+id/rAddressEditText"
+        android:layout_below="@+id/rPhoneEditText"
+        android:drawableLeft="@drawable/ic_address"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:background="@drawable/bg_edit_text"
         android:drawablePadding="15dp"
         android:fontFamily="@font/fira"
@@ -98,14 +109,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/radioGroup"
-        android:layout_below="@+id/addressEditText">
+        android:layout_below="@+id/rAddressEditText">
         <RadioButton
             android:id="@+id/codRButton"
             android:onClick="payment"
             android:layout_width="wrap_content"
             android:layout_height="26dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:buttonTint="@color/yellow"
             android:fontFamily="@font/fira"
@@ -129,20 +140,86 @@
             android:textSize="16sp"
             tools:ignore="TouchTargetSizeCheck" />
     </RadioGroup>
-    <Button
-        android:id="@+id/placeOrderButton"
+
+    <EditText
+        android:id="@+id/cardNumberEditText"
+        android:layout_below="@+id/radioGroup"
+        android:drawableLeft="@drawable/ic_card"
+        android:drawableTint="@color/yellow"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_edit_text"
+        android:drawablePadding="15dp"
+        android:fontFamily="@font/fira"
+        android:hint="Enter Card Number"
+        android:textColor="@color/maroon"
+        android:textColorHint="@color/yellow"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:visibility="gone"/>
+    <LinearLayout
+        android:id="@+id/cardDetailsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/radioGroup"
+        android:layout_below="@+id/cardNumberEditText"
+        android:orientation="horizontal"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/expirationEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Expiration Date"
+            android:inputType="text"
+            android:layout_marginEnd="10dp"
+            android:drawableTint="@color/yellow"
+            android:background="@drawable/bg_edit_text"
+            android:drawableLeft="@drawable/ic_calendar"
+            android:drawablePadding="15dp"
+            android:fontFamily="@font/fira"
+            android:textColor="@color/maroon"
+            android:textColorHint="@color/yellow"
+            android:padding="10dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/cvcEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="CVC"
+            android:inputType="number"
+            android:background="@drawable/bg_edit_text"
+            android:drawableLeft="@drawable/ic_password"
+            android:drawablePadding="15dp"
+            android:fontFamily="@font/fira"
+            android:textColor="@color/maroon"
+            android:textColorHint="@color/yellow"
+            android:padding="10dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/confirmButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardDetailsLayout"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/button_main"
         android:fontFamily="@font/play_bold"
         android:gravity="center"
-        android:padding="10dp"
-        android:text="Place Order Now"
+        android:text="Confirm"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"

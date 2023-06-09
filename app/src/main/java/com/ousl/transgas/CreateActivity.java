@@ -12,10 +12,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class CreateActivity extends AppCompatActivity {
-    Button createButton;
-    ImageButton googleButton, facebookButton;
+    Button createBtn;
+    ImageButton googleBtn, facebookBtn;
     EditText userName, email , address , mobileNumber, password, rePassword;
-    TextView loginTextButton;
+    TextView loginTextBtn;
     DBHelper DB;
 
     @Override
@@ -30,12 +30,12 @@ public class CreateActivity extends AppCompatActivity {
         mobileNumber = (EditText) findViewById(R.id.mobileNumberEditText);
         password = (EditText) findViewById(R.id.passwordEditText);
         rePassword = (EditText) findViewById(R.id.rePasswordEditText);
-        createButton = findViewById(R.id.createButton);
-        loginTextButton = findViewById(R.id.loginText);
-        googleButton = findViewById(R.id.google_Button);
-        facebookButton = findViewById(R.id.facebook_Button);
+        createBtn = findViewById(R.id.createButton);
+        loginTextBtn = findViewById(R.id.loginText);
+        googleBtn = findViewById(R.id.google_Button);
+        facebookBtn = findViewById(R.id.facebook_Button);
         DB = new DBHelper(this);
-        createButton.setOnClickListener(new View.OnClickListener() {
+        createBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String usedName = userName.getText().toString();
@@ -57,7 +57,7 @@ public class CreateActivity extends AppCompatActivity {
                             if (checkEmails == false) {
                                 Boolean createUser = DB.createNewUser(usedName, usedEmail,usedAddress, usedMobileNumber, usedPassword);
                                 if (createUser == true) {
-                                    Toast.makeText(CreateActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(CreateActivity.this, "Account Create Successful", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(CreateActivity.this, LoginActivity.class);
                                     startActivity(intent);
                                 } else {
@@ -74,20 +74,20 @@ public class CreateActivity extends AppCompatActivity {
         });
 
 
-        loginTextButton.setOnClickListener(new View.OnClickListener() {
+        loginTextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openLoginPage();
             }
         });
 
-        googleButton.setOnClickListener(new View.OnClickListener() {
+        googleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openToastNotAvailable();
             }
         });
-        facebookButton.setOnClickListener(new View.OnClickListener() {
+        facebookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openToastNotAvailable();
@@ -109,7 +109,7 @@ public class CreateActivity extends AppCompatActivity {
             userName.setError("Name Required");
             return false;
         }
-        else if (!usedName.matches("[a-zA-Z]+")) {
+        else if (!usedName.matches("[a-zA-Z ]+")) {
             userName.requestFocus();
             userName.setError("Alphabetic Letters Only");
             return false;
@@ -129,7 +129,7 @@ public class CreateActivity extends AppCompatActivity {
             address.setError("Address Required");
             return false;
         }
-        else if (!usedAddress.matches("[a-zA-Z0-9.-]+")) {
+        else if (!usedAddress.matches("[a-zA-Z 0-9,.-]+")) {
             address.requestFocus();
             address.setError("Address Invalid");
             return false;
@@ -141,7 +141,7 @@ public class CreateActivity extends AppCompatActivity {
         }
         else if (!usedMobileNumber.matches("0[0-9]{9}")) {
             mobileNumber.requestFocus();
-            mobileNumber.setError("Enter 10 Digit Number With 0");
+            mobileNumber.setError("Enter 10 Digit Number Starts with 0");
             return false;
         }
         else if(usedPassword.length()==0) {
@@ -149,14 +149,14 @@ public class CreateActivity extends AppCompatActivity {
             password.setError("Password Required");
             return false;
         }
-        else if (!usedPassword.matches("^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=_\\-!¡?¿.,;:<>])(?=\\S+$).{6,}$")) {
-            password.requestFocus();
-            password.setError("Use Special Characters and Numbers");
-            return false;
-        }
         else if(usedPassword.length()<=5) {
             password.requestFocus();
             password.setError("Minimum 6 Characters Required");
+            return false;
+        }
+        else if (!usedPassword.matches("^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=_\\-!¡?¿.,;:<>])(?=\\S+$).{6,}$")) {
+            password.requestFocus();
+            password.setError("Include Special Characters and Numbers");
             return false;
         }
         else {

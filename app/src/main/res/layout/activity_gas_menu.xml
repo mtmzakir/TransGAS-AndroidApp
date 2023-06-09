@@ -18,7 +18,7 @@
         android:paddingBottom="70dp" />
 
     <Button
-        android:id="@+id/buttonCheckout"
+        android:id="@+id/checkoutButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,6 @@
         android:fontFamily="@font/play_bold"
         android:textSize="24sp"
         android:textColor="@color/white"
-        android:padding="10dp"
         android:layout_margin="10dp"
         android:background="@drawable/button_main" />
 

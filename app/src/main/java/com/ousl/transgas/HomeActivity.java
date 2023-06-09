@@ -41,14 +41,14 @@ import java.util.Locale;
 public class HomeActivity extends AppCompatActivity{
 
     FusedLocationProviderClient fusedLocationProviderClient;
-    TextView address, viewCategory,userName;
-    ImageButton getLocation, notification;
+    TextView address, viewAll,viewAll2,userName;
+    ImageButton getLocationBtn, notificationBtn;
     ViewPager2 viewPager2;
     String currentUserDetails;
     private final static int REQUEST_CODE = 100;
     private Handler slideHandler = new Handler();
-
     BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,8 +59,8 @@ public class HomeActivity extends AppCompatActivity{
         userName = findViewById(R.id.userNameText);
 
         //Function Notification Button
-        notification =  findViewById(R.id.notificationButton);
-        notification.setOnClickListener(new View.OnClickListener() {
+        notificationBtn =  findViewById(R.id.notificationButton);
+        notificationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openNotifications();
@@ -83,7 +83,7 @@ public class HomeActivity extends AppCompatActivity{
 
         viewPager2.setAdapter(new SlideAdapter(sliderItem,viewPager2));
         viewPager2.setClipToPadding(false);
-        viewPager2.setOffscreenPageLimit(6); //Limit Images
+        viewPager2.setOffscreenPageLimit(6); //Limit Images of Slider
         viewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
 
         CompositePageTransformer compositionTransform = new CompositePageTransformer();
@@ -108,8 +108,17 @@ public class HomeActivity extends AppCompatActivity{
         });
 
         //View All Categories
-        viewCategory = findViewById(R.id.view_all);
-        viewCategory.setOnClickListener(new View.OnClickListener() {
+        viewAll = findViewById(R.id.view_all);
+        viewAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openCategoryPage();
+            }
+        });
+
+        //View All 2 Categories
+        viewAll2 = findViewById(R.id.view_all2);
+        viewAll2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openCategoryPage();
@@ -119,9 +128,9 @@ public class HomeActivity extends AppCompatActivity{
 
         //Location
         address = findViewById(R.id.currentLocation);
-        getLocation = findViewById(R.id.getLocation);
+        getLocationBtn = findViewById(R.id.getLocation);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-        getLocation.setOnClickListener(new View.OnClickListener() {
+        getLocationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getLastLocation();
@@ -240,6 +249,7 @@ public class HomeActivity extends AppCompatActivity{
         }
     }
 
+    //Location Permission Prompt
     private void askPermission() {
         ActivityCompat.requestPermissions(HomeActivity.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},REQUEST_CODE);
     }

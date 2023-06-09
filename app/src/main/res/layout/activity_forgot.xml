@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_gravity="center"
     android:background="@color/white"
     tools:context=".ForgotActivity">
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:gravity="center"
+        android:padding="20dp"
+        tools:ignore="MissingConstraints">
 
         <ImageView
             android:id="@+id/imageView"
@@ -34,8 +37,8 @@
 
         <EditText
             android:id="@+id/email"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@drawable/bg_edit_text"
             android:drawableLeft="@drawable/ic_email"
@@ -64,14 +67,14 @@
         <TextView
             android:id="@+id/backLoginText"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/play_bold"
             android:textColor="@color/maroon"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="100dp"
             android:textSize="20sp"
             android:gravity="center"
             android:clickable="true"
             android:text="Back to Login" />
     </LinearLayout>
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

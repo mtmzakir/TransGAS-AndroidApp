@@ -13,10 +13,10 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button loginButton;
-    ImageButton googleButton, facebookButton;
+    Button loginBtn;
+    ImageButton googleBtn, facebookBtn;
     EditText email , password;
-    TextView createNewAccountTextButton, forgotPasswordTextButton;
+    TextView createNewAccTextBtn, forgotPasswordTextBtn;
     DBHelper DB;
 
     @Override
@@ -25,17 +25,17 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
 
-        loginButton = findViewById(R.id.loginButton);
+        loginBtn = findViewById(R.id.loginButton);
         email = (EditText) findViewById(R.id.emailEditText);
         password = (EditText) findViewById(R.id.passwordEditText);
-        createNewAccountTextButton = findViewById(R.id.createNewAccountText);
-        forgotPasswordTextButton = findViewById(R.id.forgotPasswordText);
-        googleButton = findViewById(R.id.google_Button);
-        facebookButton = findViewById(R.id.facebook_Button);
+        createNewAccTextBtn = findViewById(R.id.createNewAccountText);
+        forgotPasswordTextBtn = findViewById(R.id.forgotPasswordText);
+        googleBtn = findViewById(R.id.google_Button);
+        facebookBtn = findViewById(R.id.facebook_Button);
         DB = new DBHelper(this);
 
         //Function Login Button
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String usedEmail = email.getText().toString();
@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         //Function Start Create Activity
-        createNewAccountTextButton.setOnClickListener(new View.OnClickListener() {
+        createNewAccTextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openCreateNewAccountPage();
@@ -66,21 +66,21 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         //Function Start Forgot Activity
-        forgotPasswordTextButton.setOnClickListener(new View.OnClickListener() {
+        forgotPasswordTextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openforgotPasswordPage();
+                openForgotPasswordPage();
             }
         });
 
         //Function Google and Facebook Buttons
-        googleButton.setOnClickListener(new View.OnClickListener() {
+        googleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openToastNotAvailable();
             }
         });
-        facebookButton.setOnClickListener(new View.OnClickListener() {
+        facebookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openToastNotAvailable();
@@ -96,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     //Open Forgot Password Page
-    public void openforgotPasswordPage() {
+    public void openForgotPasswordPage() {
         Intent intent = new Intent(this, ForgotActivity.class);
         startActivity(intent);
     }

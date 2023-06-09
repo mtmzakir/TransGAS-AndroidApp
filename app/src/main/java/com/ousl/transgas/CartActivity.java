@@ -21,7 +21,7 @@ import com.ousl.transgas.model.Menu;
 
 public class CartActivity extends AppCompatActivity {
     RecyclerView cartItemsRecyclerView;
-    Button buttonPlaceYourOrder;
+    Button placeOrderBtn;
     TextView tvSubtotalAmount, tvDeliveryChargeAmount, tvDeliveryCharge, tvTotalAmount;
     PlaceYourOrderAdapter placeYourOrderAdapter;
     String currentUserDetails;
@@ -43,11 +43,11 @@ public class CartActivity extends AppCompatActivity {
         tvDeliveryChargeAmount = findViewById(R.id.tvDeliveryChargeAmount);
         tvDeliveryCharge = findViewById(R.id.tvDeliveryCharge);
         tvTotalAmount = findViewById(R.id.tvTotalAmount);
-        buttonPlaceYourOrder = findViewById(R.id.buttonPlaceYourOrder);
+        placeOrderBtn = findViewById(R.id.buttonPlaceYourOrder);
         cartItemsRecyclerView = findViewById(R.id.cartItemsRecyclerView);
 
         //Function Place Order Button
-        buttonPlaceYourOrder.setOnClickListener(new View.OnClickListener() {
+        placeOrderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onPlaceOrderButtonClick(gasModel);

@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 public class ForgotActivity extends AppCompatActivity {
 
-    TextView backLoginTextButton;
-    Button resetButton;
+    TextView backLoginTextBtn;
+    Button resetBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +20,10 @@ public class ForgotActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forgot);
         getSupportActionBar().hide();
 
-        backLoginTextButton = findViewById(R.id.backLoginText);
-        resetButton = findViewById(R.id.resetButton);
+        backLoginTextBtn = findViewById(R.id.backLoginText);
+        resetBtn = findViewById(R.id.resetButton);
 
-        backLoginTextButton.setOnClickListener(new View.OnClickListener() {
+        backLoginTextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ForgotActivity.this,LoginActivity.class);
@@ -31,7 +31,7 @@ public class ForgotActivity extends AppCompatActivity {
             }
         });
 
-        resetButton.setOnClickListener(new View.OnClickListener() {
+        resetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(ForgotActivity.this, "Feature Unavailable \uD83D\uDE41", Toast.LENGTH_SHORT).show();

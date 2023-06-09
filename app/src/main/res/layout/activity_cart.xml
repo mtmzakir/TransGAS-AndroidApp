@@ -15,7 +15,7 @@
         <TextView
             android:id="@+id/tvTotalItems"
             android:layout_width="match_parent"
-            android:text="Items in Cart"
+            android:text="My Cart"
             android:textColor="@color/maroon"
             android:fontFamily="@font/play_bold"
             android:textSize="28sp"
@@ -115,8 +115,7 @@
             android:fontFamily="@font/play_bold"
             android:textSize="24sp"
             android:gravity="center"
-            android:padding="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/button_main"

@@ -26,7 +26,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CategoriesActivity extends AppCompatActivity implements GasListAdapter.GasListClickListener {
-
     BottomNavigationView bottomNavigationView;
     String currentUserDetails;
 

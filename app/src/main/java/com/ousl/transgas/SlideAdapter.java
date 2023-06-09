@@ -13,7 +13,6 @@ import com.makeramen.roundedimageview.RoundedImageView;
 import java.util.List;
 
 public class SlideAdapter extends RecyclerView.Adapter<SlideAdapter.SlideViewHolder>{
-
     private List<SlideItem> slideItems;
     private ViewPager2 viewPager2;
 

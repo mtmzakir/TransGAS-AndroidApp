@@ -28,7 +28,7 @@ public class GasMenuActivity extends AppCompatActivity implements MenuListAdapte
     MenuListAdapter menuListAdapter;
     List<Menu> itemsInCartList;
     int totalItemInCart = 0;
-    Button buttonCheckout;
+    Button CheckoutBtn;
     String currentUserDetails;
 
     @Override
@@ -51,8 +51,8 @@ public class GasMenuActivity extends AppCompatActivity implements MenuListAdapte
         initRecyclerView();
 
         //Function Checkout Button
-        buttonCheckout = findViewById(R.id.buttonCheckout);
-        buttonCheckout.setOnClickListener(new View.OnClickListener() {
+        CheckoutBtn = findViewById(R.id.checkoutButton);
+        CheckoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (itemsInCartList != null && itemsInCartList.size() <= 0) {
@@ -87,7 +87,7 @@ public class GasMenuActivity extends AppCompatActivity implements MenuListAdapte
         for (Menu m : itemsInCartList) {
             totalItemInCart = totalItemInCart + m.getTotalInCart();
         }
-        buttonCheckout.setText("Checkout (" + totalItemInCart + ") Items");
+        CheckoutBtn.setText("Checkout (" + totalItemInCart + ") Items");
     }
 
     //Function for Button Update
@@ -103,7 +103,7 @@ public class GasMenuActivity extends AppCompatActivity implements MenuListAdapte
             for (Menu m : itemsInCartList) {
                 totalItemInCart = totalItemInCart + m.getTotalInCart();
             }
-            buttonCheckout.setText("Checkout (" + totalItemInCart + ") Items");
+            CheckoutBtn.setText("Checkout (" + totalItemInCart + ") Items");
         }
     }
 
@@ -117,7 +117,7 @@ public class GasMenuActivity extends AppCompatActivity implements MenuListAdapte
             for (Menu m : itemsInCartList) {
                 totalItemInCart = totalItemInCart + m.getTotalInCart();
             }
-            buttonCheckout.setText("Checkout (" + totalItemInCart + ") Items");
+            CheckoutBtn.setText("Checkout (" + totalItemInCart + ") Items");
         }
     }
 

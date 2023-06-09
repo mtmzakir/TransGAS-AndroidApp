@@ -14,20 +14,25 @@ import java.util.ArrayList;
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DBNAME = "login.db";
-    public static final String TABLE_USERS = "users";
-    public static final String TABLE_ORDERS = "orders";
+    public static final String TABLE_USERS = "Users";
+    public static final String TABLE_ORDERS = "Orders";
     public static final String COLUMN_ID = "UserID";
     public static final String COLUMN_USER_NAME = "UserName";
     public static final String COLUMN_EMAIL = "Email";
     public static final String COLUMN_ADDRESS = "Address";
     public static final String COLUMN_MOBILE_NUMBER = "MobileNumber";
     public static final String COLUMN_PASSWORD = "Password";
-    public static final String COLUMN_ORDER_ID = "orderID";
-    public static final String COLUMN_ORDER_DATE = "orderDate";
-    public static final String COLUMN_ORDER_TIME = "orderTime";
-    public static final String COLUMN_ORDER_AMOUNT = "orderAmount";
-    public static final String COLUMN_ORDER_ADDRESS = "orderAddress";
-    public static final String COLUMN_ORDER_METHOD = "orderMethod";
+    public static final String COLUMN_ORDER_ID = "OrderID";
+    public static final String COLUMN_ORDER_DATE = "OrderDate";
+    public static final String COLUMN_ORDER_TIME = "OrderTime";
+    public static final String COLUMN_ORDER_AMOUNT = "OrderAmount";
+    public static final String COLUMN_ORDER_REC_ADDRESS = "OrderReceiverAddress";
+    public static final String COLUMN_ORDER_METHOD = "OrderMethod";
+    public static final String COLUMN_ORDER_REC_NAME = "OrderReceiverName";
+    public static final String COLUMN_ORDER_REC_MOBILE_NUMBER = "OrderReceiverPhone";
+    public static final String COLUMN_ORDER_CARD_NUMBER = "CardNumber";
+    public static final String COLUMN_ORDER_CARD_EXP = "CardExpiry";
+    public static final String COLUMN_ORDER_CARD_CVC = "CardCVC";
 
     public DBHelper(Context context) {
         super(context, DBNAME, null, 1);
@@ -50,9 +55,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 + COLUMN_ID + " INTEGER, "
                 + COLUMN_ORDER_DATE + " TEXT, "
                 + COLUMN_ORDER_TIME + " TEXT, "
+                + COLUMN_ORDER_REC_NAME + " TEXT, "
+                + COLUMN_ORDER_REC_MOBILE_NUMBER + " TEXT, "
+                + COLUMN_ORDER_REC_ADDRESS + " TEXT, "
                 + COLUMN_ORDER_AMOUNT + " TEXT, "
-                + COLUMN_ORDER_ADDRESS + " TEXT, "
                 + COLUMN_ORDER_METHOD + " TEXT, "
+                + COLUMN_ORDER_CARD_NUMBER + " TEXT, "
+                + COLUMN_ORDER_CARD_EXP + " TEXT, "
+                + COLUMN_ORDER_CARD_CVC + " TEXT, "
                 + "FOREIGN KEY(" + COLUMN_ORDER_ID + ") REFERENCES " + TABLE_USERS + "(" + COLUMN_ID + "))";
 
         MyDB.execSQL(CREATE_USERS_TABLE_QUERY);
@@ -63,8 +73,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase MyDB, int i, int i1) {
-        MyDB.execSQL("drop Table if exists users");
-        MyDB.execSQL("drop Table if exists orders");
+        MyDB.execSQL("drop Table if exists Users");
+        MyDB.execSQL("drop Table if exists Orders");
 
     }
 
@@ -153,11 +163,31 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     //Add Address to DataBase
-    public boolean addDeliveryDetails(String UserID, String orderAddress, String orderMethod){
+    public boolean addDeliveryDetailsWithCard(String UserID, String orderName,String orderPhone, String orderAddress, String orderMethod,String CardNumber, String CardExpiry, String CardCVC){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_ID,UserID);
-        contentValues.put(COLUMN_ORDER_ADDRESS,orderAddress);
+        contentValues.put(COLUMN_ORDER_REC_NAME,orderName);
+        contentValues.put(COLUMN_ORDER_REC_MOBILE_NUMBER,orderPhone);
+        contentValues.put(COLUMN_ORDER_REC_ADDRESS,orderAddress);
+        contentValues.put(COLUMN_ORDER_METHOD,orderMethod);
+        contentValues.put(COLUMN_ORDER_CARD_NUMBER,CardNumber);
+        contentValues.put(COLUMN_ORDER_CARD_EXP,CardExpiry);
+        contentValues.put(COLUMN_ORDER_CARD_CVC,CardCVC);
+        long result = MyDB.insert(TABLE_ORDERS, null, contentValues);
+        if(result==-1) return false;
+        else
+            return true;
+    }
+
+    //Add Address to DataBase
+    public boolean addDeliveryDetailsWithoutCard(String UserID, String orderName,String orderPhone, String orderAddress, String orderMethod){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_ID,UserID);
+        contentValues.put(COLUMN_ORDER_REC_NAME,orderName);
+        contentValues.put(COLUMN_ORDER_REC_MOBILE_NUMBER,orderPhone);
+        contentValues.put(COLUMN_ORDER_REC_ADDRESS,orderAddress);
         contentValues.put(COLUMN_ORDER_METHOD,orderMethod);
         long result = MyDB.insert(TABLE_ORDERS, null, contentValues);
         if(result==-1) return false;
