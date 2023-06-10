@@ -23,13 +23,13 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COLUMN_MOBILE_NUMBER = "MobileNumber";
     public static final String COLUMN_PASSWORD = "Password";
     public static final String COLUMN_ORDER_ID = "OrderID";
-    public static final String COLUMN_ORDER_DATE = "OrderDate";
-    public static final String COLUMN_ORDER_TIME = "OrderTime";
-    public static final String COLUMN_ORDER_AMOUNT = "OrderAmount";
-    public static final String COLUMN_ORDER_REC_ADDRESS = "OrderReceiverAddress";
-    public static final String COLUMN_ORDER_METHOD = "OrderMethod";
-    public static final String COLUMN_ORDER_REC_NAME = "OrderReceiverName";
-    public static final String COLUMN_ORDER_REC_MOBILE_NUMBER = "OrderReceiverPhone";
+    public static final String COLUMN_ORDER_DATE = "Date";
+    public static final String COLUMN_ORDER_TIME = "Time";
+    public static final String COLUMN_ORDER_AMOUNT = "Amount";
+    public static final String COLUMN_ORDER_REC_ADDRESS = "ReceiverAddress";
+    public static final String COLUMN_ORDER_PAY_METHOD = "PayMethod";
+    public static final String COLUMN_ORDER_REC_NAME = "ReceiverName";
+    public static final String COLUMN_ORDER_REC_MOBILE_NUMBER = "ReceiverMobile";
     public static final String COLUMN_ORDER_CARD_NUMBER = "CardNumber";
     public static final String COLUMN_ORDER_CARD_EXP = "CardExpiry";
     public static final String COLUMN_ORDER_CARD_CVC = "CardCVC";
@@ -59,7 +59,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 + COLUMN_ORDER_REC_MOBILE_NUMBER + " TEXT, "
                 + COLUMN_ORDER_REC_ADDRESS + " TEXT, "
                 + COLUMN_ORDER_AMOUNT + " TEXT, "
-                + COLUMN_ORDER_METHOD + " TEXT, "
+                + COLUMN_ORDER_PAY_METHOD + " TEXT, "
                 + COLUMN_ORDER_CARD_NUMBER + " TEXT, "
                 + COLUMN_ORDER_CARD_EXP + " TEXT, "
                 + COLUMN_ORDER_CARD_CVC + " TEXT, "
@@ -163,14 +163,17 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     //Add Address to DataBase
-    public boolean addDeliveryDetailsWithCard(String UserID, String orderName,String orderPhone, String orderAddress, String orderMethod,String CardNumber, String CardExpiry, String CardCVC){
+    public boolean addDeliveryDetailsWithCard(String UserID, String OrderDate,String OrderTime,String orderName,String orderPhone, String orderAddress,String orderAmount, String orderMethod,String CardNumber, String CardExpiry, String CardCVC){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_ID,UserID);
+        contentValues.put(COLUMN_ORDER_DATE,OrderDate);
+        contentValues.put(COLUMN_ORDER_TIME,OrderTime);
         contentValues.put(COLUMN_ORDER_REC_NAME,orderName);
         contentValues.put(COLUMN_ORDER_REC_MOBILE_NUMBER,orderPhone);
         contentValues.put(COLUMN_ORDER_REC_ADDRESS,orderAddress);
-        contentValues.put(COLUMN_ORDER_METHOD,orderMethod);
+        contentValues.put(COLUMN_ORDER_AMOUNT,orderAmount);
+        contentValues.put(COLUMN_ORDER_PAY_METHOD,orderMethod);
         contentValues.put(COLUMN_ORDER_CARD_NUMBER,CardNumber);
         contentValues.put(COLUMN_ORDER_CARD_EXP,CardExpiry);
         contentValues.put(COLUMN_ORDER_CARD_CVC,CardCVC);
@@ -181,14 +184,17 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     //Add Address to DataBase
-    public boolean addDeliveryDetailsWithoutCard(String UserID, String orderName,String orderPhone, String orderAddress, String orderMethod){
+    public boolean addDeliveryDetailsWithoutCard(String UserID,String OrderDate,String OrderTime, String orderName,String orderPhone, String orderAddress,String orderAmount, String orderMethod){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_ID,UserID);
+        contentValues.put(COLUMN_ORDER_DATE,OrderDate);
+        contentValues.put(COLUMN_ORDER_TIME,OrderTime);
         contentValues.put(COLUMN_ORDER_REC_NAME,orderName);
         contentValues.put(COLUMN_ORDER_REC_MOBILE_NUMBER,orderPhone);
         contentValues.put(COLUMN_ORDER_REC_ADDRESS,orderAddress);
-        contentValues.put(COLUMN_ORDER_METHOD,orderMethod);
+        contentValues.put(COLUMN_ORDER_AMOUNT,orderAmount);
+        contentValues.put(COLUMN_ORDER_PAY_METHOD,orderMethod);
         long result = MyDB.insert(TABLE_ORDERS, null, contentValues);
         if(result==-1) return false;
         else

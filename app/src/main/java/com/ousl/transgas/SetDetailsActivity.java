@@ -2,7 +2,8 @@ package com.ousl.transgas;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -48,11 +49,20 @@ public class SetDetailsActivity extends AppCompatActivity {
         currentUserDetails = getIntent().getStringExtra("current_user_data");
         DB = new DBHelper(this);
 
+
         // Function Place Order
         confirmBtn = findViewById(R.id.confirmButton);
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Get the current date and time
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
+                String currentDate = dateFormat.format(new Date());
+                String currentTime = timeFormat.format(new Date());
+
+                // Get the total amount from the intent
+                String usedAmount = getIntent().getStringExtra("total_amount");
                 String usedId = userId.getText().toString();
                 String usedName = rName.getText().toString();
                 String usedAddress = rAddress.getText().toString();
@@ -71,7 +81,7 @@ public class SetDetailsActivity extends AppCompatActivity {
                         Toast.makeText(SetDetailsActivity.this, "Enter All Fields", Toast.LENGTH_SHORT).show();
                     } else {
                         if (orderMethod.equals("Cash On Delivery")) {
-                            Boolean addDeliveryDetail1 = DB.addDeliveryDetailsWithoutCard(usedId, usedName, usedPhone, usedAddress, orderMethod);
+                            Boolean addDeliveryDetail1 = DB.addDeliveryDetailsWithoutCard(usedId, currentDate, currentTime, usedName, usedPhone, usedAddress,usedAmount, orderMethod);
                             if (addDeliveryDetail1) {
                                 Toast.makeText(SetDetailsActivity.this, "Order Successful", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(SetDetailsActivity.this, OrderSuccessActivity.class);
@@ -85,7 +95,7 @@ public class SetDetailsActivity extends AppCompatActivity {
                                 if (usedCardNumber.isEmpty() || usedExpireDate.isEmpty() || usedCVC.isEmpty()) {
                                     Toast.makeText(SetDetailsActivity.this, "Enter All Fields", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    Boolean addDeliveryDetail2 = DB.addDeliveryDetailsWithCard(usedId, usedName, usedPhone, usedAddress, orderMethod, usedCardNumber, usedExpireDate, usedCVC);
+                                    Boolean addDeliveryDetail2 = DB.addDeliveryDetailsWithCard(usedId, currentDate, currentTime, usedName, usedPhone, usedAddress, usedAmount, orderMethod, usedCardNumber, usedExpireDate, usedCVC);
                                     if (addDeliveryDetail2) {
                                         Toast.makeText(SetDetailsActivity.this, "Order Successful", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(SetDetailsActivity.this, OrderSuccessActivity.class);
