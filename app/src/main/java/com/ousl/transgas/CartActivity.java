@@ -74,12 +74,17 @@ public class CartActivity extends AppCompatActivity {
 
     //Function Place Order Click
     private void onPlaceOrderButtonClick(GasModel gasModel) {
-        //start success activity..
+        // Get the total amount as a string
+        String totalAmount = tvTotalAmount.getText().toString();
+
+        // Start the SetDetailsActivity and pass the total amount
         Intent i = new Intent(CartActivity.this, SetDetailsActivity.class);
         i.putExtra("GasModel", gasModel);
-        i.putExtra("current_user_data",currentUserDetails); //User Details Push
+        i.putExtra("current_user_data", currentUserDetails); // User Details Push
+        i.putExtra("total_amount", totalAmount); // Pass the total amount
         startActivityForResult(i, 1000);
     }
+
 
     private void initRecyclerView(GasModel gasModel) {
         cartItemsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
