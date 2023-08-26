@@ -1,21 +1,19 @@
 package com.ousl.transgas;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.gson.Gson;
-import com.ousl.transgas.R;
-import com.ousl.transgas.adapter.GasListAdapter;
+import com.ousl.transgas.adapters.GasListAdapter;
 import com.ousl.transgas.model.GasModel;
 
 import java.io.BufferedReader;
@@ -28,8 +26,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CategoriesActivity extends AppCompatActivity implements GasListAdapter.GasListClickListener {
-
     BottomNavigationView bottomNavigationView;
+    String currentUserDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +35,17 @@ public class CategoriesActivity extends AppCompatActivity implements GasListAdap
         setContentView(R.layout.activity_categories);
         getSupportActionBar().hide();
 
-        bottomNavigationView = findViewById(R.id.bottom_navigator);
-        bottomNavigationView.setSelectedItemId(R.id.categories);
-//        bottomNavigationView.setLabelVisibilityMode(NavigationBarView.LABEL_VISIBILITY_UNLABELED);
+        //Receive Pushed Database Data
+        currentUserDetails=getIntent().getStringExtra("current_user_data");
 
+        //Parse JSON Data
         List<GasModel> gasModelList= getGasData();
         initRecyclerView(gasModelList);
 
         //Navigation Bottom
+        bottomNavigationView = findViewById(R.id.bottom_navigator);
+        bottomNavigationView.setSelectedItemId(R.id.categories);
+        //bottomNavigationView.setLabelVisibilityMode(NavigationBarView.LABEL_VISIBILITY_UNLABELED);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -54,17 +55,23 @@ public class CategoriesActivity extends AppCompatActivity implements GasListAdap
                         return true;
 
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+                        intent.putExtra("current_user_data",currentUserDetails);  //User Details Push
+                        startActivity(intent);
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.cart:
-                        startActivity(new Intent(getApplicationContext(),CartActivity.class));
+                    case R.id.orders:
+                        Intent intent2 = new Intent(getApplicationContext(),OrdersActivity.class);
+                        intent2.putExtra("current_user_data",currentUserDetails);  //User Details Push
+                        startActivity(intent2);
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.account:
-                        startActivity(new Intent(getApplicationContext(),AccountActivity.class));
+                    case R.id.profile:
+                        Intent intent3 = new Intent(getApplicationContext(),ProfileActivity.class);
+                        intent3.putExtra("current_user_data",currentUserDetails);  //User Details Push
+                        startActivity(intent3);
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -107,15 +114,19 @@ public class CategoriesActivity extends AppCompatActivity implements GasListAdap
     //Back Press Home
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+        Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+        intent.putExtra("current_user_data",currentUserDetails);  //User Details Push
+        startActivity(intent);
         overridePendingTransition(0,0);
         }
 
+    //Function Start Gas Menu Activity
     @Override
     public void onItemClick(GasModel gasModel) {
         Intent intent = new Intent (CategoriesActivity.this, GasMenuActivity.class);
         intent.putExtra("GasModel",gasModel);
+        intent.putExtra("current_user_data",currentUserDetails); //User Details Push
         startActivity(intent);
-
     }
+
 }

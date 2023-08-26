@@ -9,13 +9,16 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        app:cardBackgroundColor="#D9D9D9"
+        app:cardBackgroundColor="@color/light_yellow"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardCornerRadius="5dp"
-        android:layout_margin="10dp">
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,9 +26,11 @@
             android:orientation="vertical"
             android:layout_gravity="center_vertical">
 
-            <ImageView android:id="@+id/thumbImage"
+            <ImageView
+                android:id="@+id/thumbImage"
+                android:scaleType="fitXY"
                 android:layout_width="wrap_content"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="5dp" />
 
@@ -34,42 +39,45 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:fontFamily="@font/inter_bold"
+                android:fontFamily="@font/fira_bold"
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="5dp" />
 
-            <TextView android:id="@+id/menuRating"
+            <TextView
+                android:id="@+id/menuRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:textSize="16sp"
-                android:fontFamily="@font/inter_bold"
-                android:textColor="@color/yellow"
+                android:fontFamily="@font/fira_bold"
+                android:textColor="@color/maroon"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp" />
 
-            <TextView android:id="@+id/menuPrice"
+            <TextView
+                android:id="@+id/menuPrice"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:fontFamily="@font/inter_medium"
+                android:fontFamily="@font/fira_medium"
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp" />
 
-            <TextView android:id="@+id/addToCartButton"
+            <TextView
+                android:id="@+id/addToCartButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:textColor="@color/black"
+                android:textColor="@color/maroon"
                 android:layout_marginStart="10dp"
-                android:fontFamily="@font/inter_bold"
+                android:fontFamily="@font/fira_bold"
                 android:layout_marginEnd="10dp"
-                android:text="Add to cart"
-                android:background="@drawable/add_card_button"
+                android:text="Add to Cart"
+                android:background="@drawable/button_add_card"
                 android:layout_margin="10dp"
                 android:padding="8dp"
                 android:gravity="center_horizontal" />
@@ -86,14 +94,14 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/remove_icon" />
+                    android:src="@drawable/icon_remove" />
 
                 <TextView android:id="@+id/tvCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="19sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/inter_bold"
+                    android:textColor="@color/maroon"
+                    android:fontFamily="@font/fira_bold"
                     android:layout_marginStart="12dp"
                     android:layout_marginEnd="12dp"
                     android:text="1"
@@ -104,7 +112,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/add_icon" />
+                    android:src="@drawable/icon_add" />
 
             </LinearLayout>
 

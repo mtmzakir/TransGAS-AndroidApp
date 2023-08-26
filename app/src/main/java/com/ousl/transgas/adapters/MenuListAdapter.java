@@ -1,4 +1,4 @@
-package com.ousl.transgas.adapter;
+package com.ousl.transgas.adapters;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
@@ -13,15 +13,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.ousl.transgas.R;
-import com.ousl.transgas.model.GasModel;
 import com.ousl.transgas.model.Menu;
 
 import java.util.List;
 
 public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MyViewHolder> {
 
-    private List<Menu> menuList;
-    private MenuListClickListener clickListener;
+    List<Menu> menuList;
+    MenuListClickListener clickListener;
 
     public MenuListAdapter(List<Menu> menuList, MenuListClickListener clickListener) {
         this.menuList = menuList;
@@ -30,6 +29,7 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MyView
 
     public void updateData(List<Menu> menuList) {
         this.menuList = menuList;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -42,26 +42,52 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MenuListAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.menuName.setText(menuList.get(position).getName());
-        holder.menuPrice.setText("Rs." + menuList.get(position).getPrice()+"0");
-        holder.menuRating.setText("★" + menuList.get(position).getRating());
+        holder.menuPrice.setText("Rs." + menuList.get(position).getPrice() + "0");
+        holder.menuRating.setText("" + menuList.get(position).getRating());
+
         holder.addToCartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Menu menu  = menuList.get(position);
+                Menu menu = menuList.get(position);
                 menu.setTotalInCart(1);
                 clickListener.onAddToCartClick(menu);
                 holder.addMoreLayout.setVisibility(View.VISIBLE);
                 holder.addToCartButton.setVisibility(View.GONE);
-                holder.tvCount.setText(menu.getTotalInCart()+"");
+                holder.tvCount.setText(menu.getTotalInCart() + "");
+            }
+        });
+        holder.imageMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Menu menu = menuList.get(position);
+                int total = menu.getTotalInCart();
+                total--;
+                if (total > 0) {
+                    menu.setTotalInCart(total);
+                    clickListener.onUpdateCartClick(menu);
+                    holder.tvCount.setText(total + "");
+                } else {
+                    holder.addMoreLayout.setVisibility(View.GONE);
+                    holder.addToCartButton.setVisibility(View.VISIBLE);
+                    menu.setTotalInCart(total);
+                    clickListener.onRemoveFromCartClick(menu);
+                }
+            }
+        });
+        holder.imageAddOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Menu menu = menuList.get(position);
+                int total = menu.getTotalInCart();
+                total++;
+                if (total <= 10) {
+                    menu.setTotalInCart(total);
+                    clickListener.onUpdateCartClick(menu);
+                    holder.tvCount.setText(total + "");
+                }
             }
         });
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickListener.onAddToCartClick(menuList.get(position));
-            }
-        });
         Glide.with(holder.thumbImage)
                 .load(menuList.get(position).getUrl())
                 .into(holder.thumbImage);
@@ -80,7 +106,7 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MyView
         ImageView thumbImage;
         ImageView imageMinus;
         ImageView imageAddOne;
-        TextView  tvCount;
+        TextView tvCount;
         LinearLayout addMoreLayout;
 
         public MyViewHolder(View view) {
@@ -94,11 +120,14 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MyView
             imageAddOne = view.findViewById(R.id.imageAddOne);
             tvCount = view.findViewById(R.id.tvCount);
 
-            addMoreLayout  = view.findViewById(R.id.addMoreLayout);
+            addMoreLayout = view.findViewById(R.id.addMoreLayout);
 
         }
     }
+
     public interface MenuListClickListener {
         public void onAddToCartClick(Menu menu);
+        public void onUpdateCartClick(Menu menu);
+        public void onRemoveFromCartClick(Menu menu);
     }
 }

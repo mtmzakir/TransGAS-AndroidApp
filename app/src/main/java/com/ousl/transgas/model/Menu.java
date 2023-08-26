@@ -10,13 +10,13 @@ public class Menu implements Parcelable {
     private float price;
     private String url;
     private int totalInCart;
-    private float rating;
+    private String rating;
 
     protected Menu(Parcel in) {
         name = in.readString();
         price = in.readFloat();
         url = in.readString();
-        rating = in.readFloat();
+        rating = in.readString();
         totalInCart = in.readInt();
     }
 
@@ -64,11 +64,11 @@ public class Menu implements Parcelable {
         this.url = url;
     }
 
-    public float getRating() {
+    public String getRating() {
         return rating;
     }
 
-    public void setRating(float rating) {
+    public void setRating(String rating) {
         this.rating = rating;
     }
 
@@ -82,7 +82,7 @@ public class Menu implements Parcelable {
         dest.writeString(name);
         dest.writeFloat(price);
         dest.writeString(url);
-        dest.writeFloat(rating);
+        dest.writeString(rating);
         dest.writeInt(totalInCart);
     }
 }

@@ -1,4 +1,4 @@
-package com.ousl.transgas.adapter;
+package com.ousl.transgas.adapters;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;

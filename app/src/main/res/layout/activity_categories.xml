@@ -6,6 +6,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".CategoriesActivity">
 
     <TextView
@@ -13,19 +14,11 @@
         android:id="@+id/Categories"
         android:text="Categories"
         android:textColor="@color/maroon"
-        android:fontFamily="@font/inter_bold"
+        android:fontFamily="@font/play_bold"
         android:textSize="28sp"
         android:gravity="center"
         android:layout_height="60dp"/>
 
-    <ImageButton
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="2dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/ic_notifications_24"
-        android:background="@color/white"
-        android:layout_alignParentRight="true"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -33,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/Categories"
         android:gravity="center"
-        android:paddingBottom="20dp"
+        android:paddingBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -42,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bottom_navigator"
-        app:itemBackground="@color/light_yellow"
+        app:itemBackground="@color/maroon"
         app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu"

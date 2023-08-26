@@ -6,7 +6,6 @@ public class SlideItem {
     SlideItem(int image){
         this.image = image;
     }
-
     public int getImage() {
         return image;
     }

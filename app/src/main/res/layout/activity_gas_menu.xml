@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".GasMenuActivity">
 
 
@@ -14,11 +15,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="10dp"
         android:paddingBottom="70dp" />
 
-    <TextView
-        android:id="@+id/buttonCheckout"
+    <Button
+        android:id="@+id/checkoutButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,11 +26,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:text="Checkout"
         android:gravity="center"
-        android:fontFamily="@font/inter_bold"
+        android:fontFamily="@font/play_bold"
         android:textSize="24sp"
         android:textColor="@color/white"
-        android:padding="10dp"
         android:layout_margin="10dp"
-        android:background="@drawable/main_button" />
+        android:background="@drawable/button_main" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

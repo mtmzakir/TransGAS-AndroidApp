@@ -13,10 +13,10 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button loginButton;
-    ImageButton googleButton, facebookButton;
+    Button loginBtn;
+    ImageButton googleBtn, facebookBtn;
     EditText email , password;
-    TextView createNewAccountTextButton, forgotPasswordTextButton;
+    TextView createNewAccTextBtn, forgotPasswordTextBtn;
     DBHelper DB;
 
     @Override
@@ -25,55 +25,62 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
 
-        loginButton = findViewById(R.id.loginButton);
-        email = (EditText) findViewById(R.id.email1);
-        password = (EditText) findViewById(R.id.password1);
-        createNewAccountTextButton = findViewById(R.id.createNewAccountText);
-        forgotPasswordTextButton = findViewById(R.id.forgotPasswordText);
-        googleButton = findViewById(R.id.google_Button);
-        facebookButton = findViewById(R.id.facebook_Button);
+        loginBtn = findViewById(R.id.loginButton);
+        email = (EditText) findViewById(R.id.emailEditText);
+        password = (EditText) findViewById(R.id.passwordEditText);
+        createNewAccTextBtn = findViewById(R.id.createNewAccountText);
+        forgotPasswordTextBtn = findViewById(R.id.forgotPasswordText);
+        googleBtn = findViewById(R.id.google_Button);
+        facebookBtn = findViewById(R.id.facebook_Button);
         DB = new DBHelper(this);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+
+        //Function Login Button
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String emails = email.getText().toString();
-                String passwords = password.getText().toString();
+                String usedEmail = email.getText().toString();
+                String usedPassword = password.getText().toString();
 
-                if (emails.equals("") || passwords.equals(""))
-                    Toast.makeText(LoginActivity.this, "Fields Cannot Be Empty ❗", Toast.LENGTH_SHORT).show();
+                if (usedEmail.equals("") || usedPassword.equals(""))
+                    Toast.makeText(LoginActivity.this, "Enter All Fields", Toast.LENGTH_SHORT).show();
                 else {
-                    Boolean checkemailpasswords = DB.checkemailpasswords(emails,passwords);
-                    if (checkemailpasswords==true) {
-                        Toast.makeText(LoginActivity.this, "Login Successful \uD83D\uDE0A", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                    Boolean checkEmailPasswords = DB.checkEmailPassword(usedEmail, usedPassword);
+                    if (checkEmailPasswords == true) {
+                        Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                        intent.putExtra("current_user_data",usedEmail);  //User Details Push
                         startActivity(intent);
                     } else {
-                        Toast.makeText(LoginActivity.this, "Invalid Credentials ⚠", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
 
-        createNewAccountTextButton.setOnClickListener(new View.OnClickListener() {
+        //Function Start Create Activity
+        createNewAccTextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                opencreateNewAccountPage();
-            }
-        });
-        forgotPasswordTextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openforgotPasswordPage();
+                openCreateNewAccountPage();
             }
         });
 
-        googleButton.setOnClickListener(new View.OnClickListener() {
+        //Function Start Forgot Activity
+        forgotPasswordTextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openForgotPasswordPage();
+            }
+        });
+
+        //Function Google and Facebook Buttons
+        googleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openToastNotAvailable();
             }
         });
-        facebookButton.setOnClickListener(new View.OnClickListener() {
+        facebookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openToastNotAvailable();
@@ -81,14 +88,20 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-    public void opencreateNewAccountPage() {
+
+    //Open Create New Account Page
+    public void openCreateNewAccountPage() {
         Intent intent = new Intent(this, CreateActivity.class);
         startActivity(intent);
     }
-    public void openforgotPasswordPage() {
+
+    //Open Forgot Password Page
+    public void openForgotPasswordPage() {
         Intent intent = new Intent(this, ForgotActivity.class);
         startActivity(intent);
     }
+
+    //Open Toast Not Available
     public void openToastNotAvailable() {
         Toast.makeText(this, "Feature Unavailable \uD83D\uDE41", Toast.LENGTH_SHORT).show();
     }

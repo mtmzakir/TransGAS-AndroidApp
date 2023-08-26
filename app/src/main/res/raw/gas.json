@@ -2,132 +2,132 @@
   {
     "name":"Litro GAS",
     "address":"Colombo",
-    "delivery_charge": 200.00,
-    "image":"https://i.ibb.co/9VfJZYj/litrogas.png",
+    "delivery_charge": 200,
+    "image":"https://i.ibb.co/hCxs8yd/m-litrogas.png",
 
     "menus": [
       {
         "name": "Litro 2.5kg",
         "price": 1000,
-        "rating": 4.5,
-        "url": "https://i.ibb.co/9VfJZYj/litrogas.png"
+        "rating": "★★★",
+        "url": "https://i.ibb.co/m8YGxCb/litro.png"
       },
       {
         "name": "Litro 5kg",
         "price": 2000,
-        "rating": 4.5,
-        "url": "https://i.ibb.co/9VfJZYj/litrogas.png"
+        "rating": "★★★",
+        "url": "https://i.ibb.co/m8YGxCb/litro.png"
       },
       {
         "name": "Litro 12.5kg",
         "price": 3000,
-        "rating": 4.6,
-        "url": "https://i.ibb.co/9VfJZYj/litrogas.png"
+        "rating": "★★★",
+        "url": "https://i.ibb.co/m8YGxCb/litro.png"
       },
       {
         "name": "Litro 37.5kg",
         "price": 5000,
-        "rating": 4.2,
-        "url": "https://i.ibb.co/9VfJZYj/litrogas.png"
+        "rating": "★★★★★",
+        "url": "https://i.ibb.co/m8YGxCb/litro.png"
       }
     ]
   },
   {
     "name":"Laugfs GAS",
     "address":"Colombo",
-    "delivery_charge": 250.00,
-    "image":"https://i.ibb.co/X3PpZWZ/laugfsgas.png",
+    "delivery_charge": 250,
+    "image":"https://i.ibb.co/JsCG2k5/m-laugfsgas-2.png",
 
     "menus": [
       {
         "name": "Laugfs 2.5kg",
         "price": 1000,
-        "rating": 4.5,
-        "url": "https://i.ibb.co/X3PpZWZ/laugfsgas.png"
+        "rating": "★★★",
+        "url": "https://i.ibb.co/Yt6VR7j/laugfs.png"
       },
       {
         "name": "Laugfs 5kg",
         "price": 2000,
-        "rating": 4.5,
-        "url": "https://i.ibb.co/X3PpZWZ/laugfsgas.png"
+        "rating": "★★★",
+        "url": "https://i.ibb.co/Yt6VR7j/laugfs.png"
       },
       {
         "name": "Laugfs 12.5kg",
         "price": 3000,
-        "rating": 4.6,
-        "url": "https://i.ibb.co/X3PpZWZ/laugfsgas.png"
+        "rating": "★★★",
+        "url": "https://i.ibb.co/Yt6VR7j/laugfs.png"
       },
       {
         "name": "Laugfs 37.5kg",
         "price": 5000,
-        "rating": 4.2,
-        "url": "https://i.ibb.co/X3PpZWZ/laugfsgas.png"
+        "rating": "★★★",
+        "url": "https://i.ibb.co/Yt6VR7j/laugfs.png"
       }
     ]
   },
   {
     "name":"Empty Cylinders",
     "address":"Colombo",
-    "delivery_charge": 100.00,
-    "image":"https://i.ibb.co/CP0K5t5/emptygas.png",
+    "delivery_charge": 100,
+    "image":"https://i.ibb.co/4YfRXwH/m-emptygas.png",
 
     "menus": [
       {
         "name": "2.5kg Cylinder",
         "price": 6000,
-        "rating": 4.5,
-        "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
+        "rating": "★★★",
+        "url": "https://i.ibb.co/9vK9pTL/empty.png"
       },
       {
         "name": "5kg Cylinder",
         "price": 8000,
-        "rating": 4.5,
-        "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
+        "rating": "★★★",
+        "url": "https://i.ibb.co/9vK9pTL/empty.png"
       },
       {
         "name": "12.5kg Cylinder",
         "price": 12000,
-        "rating": 4.6,
-        "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
+        "rating": "★★★",
+        "url": "https://i.ibb.co/9vK9pTL/empty.png"
       },
       {
         "name": "37.5kg Cylinder",
         "price": 15000,
-        "rating": 4.2,
-        "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
+        "rating": "★★★",
+        "url": "https://i.ibb.co/9vK9pTL/empty.png"
       }
     ]
   },
   {
     "name":"Accessories",
     "address":"Colombo",
-    "delivery_charge": 50.00,
-    "image":"https://i.ibb.co/CP0K5t5/emptygas.png",
+    "delivery_charge": 50,
+    "image":"https://i.ibb.co/KhLFWXJ/pin.png",
 
     "menus": [
       {
-        "name": "2.5kg Cylinder",
+        "name": "Adapter Mini",
         "price": 6000,
-        "rating": 4.5,
-        "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
+        "rating": "★★★",
+        "url": "https://i.ibb.co/KhLFWXJ/pin.png"
       },
       {
-        "name": "5kg Cylinder",
+        "name": "Adapter Large",
         "price": 8000,
-        "rating": 4.5,
-        "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
+        "rating": "★★★",
+        "url": "https://i.ibb.co/KhLFWXJ/pin.png"
       },
       {
-        "name": "12.5kg Cylinder",
+        "name": "Wire Large",
         "price": 12000,
-        "rating": 4.6,
-        "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
+        "rating": "★★★",
+        "url": "https://i.ibb.co/qjnXHTg/adapter.png"
       },
       {
-        "name": "37.5kg Cylinder",
+        "name": "Wire Small",
         "price": 15000,
-        "rating": 4.2,
-        "url": "https://i.ibb.co/CP0K5t5/emptygas.png"
+        "rating": "★★★",
+        "url": "https://i.ibb.co/qjnXHTg/adapter.png"
       }
     ]
   }
