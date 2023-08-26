@@ -21,6 +21,7 @@
 
         <ImageView android:id="@+id/thumbImage"
             android:layout_width="120dp"
+            android:scaleType="fitXY"
             android:layout_height="100dp"
             android:layout_gravity="start"
             android:layout_marginTop="20dp"

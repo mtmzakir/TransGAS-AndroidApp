@@ -137,6 +137,7 @@
         <ImageButton
             android:id="@+id/litro_gas"
             android:layout_width="80dp"
+            android:scaleType="fitXY"
             android:layout_height="80dp"
             android:background="@color/white"
             android:src="@drawable/m_litrogas" />
@@ -144,6 +145,7 @@
         <ImageButton
             android:id="@+id/laugfs_gas"
             android:layout_width="80dp"
+            android:scaleType="fitXY"
             android:layout_height="80dp"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/litro_gas"
@@ -153,6 +155,7 @@
         <ImageButton
             android:id="@+id/empty_gas"
             android:layout_width="80dp"
+            android:scaleType="fitXY"
             android:layout_height="80dp"
             android:layout_toRightOf="@+id/laugfs_gas"
             android:background="@color/white"
@@ -162,6 +165,7 @@
         <ImageButton
             android:id="@+id/access_gas"
             android:layout_width="80dp"
+            android:scaleType="fitXY"
             android:layout_height="80dp"
             android:layout_toRightOf="@+id/empty_gas"
             android:background="@color/white"
